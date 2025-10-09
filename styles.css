@@ -5,90 +5,133 @@
     font-family: 'arial', sans-serif ;
 }
 
-/* ======== HEADER ======== */
+/* ======== HEADER (mejorado y responsivo) ======== */
 header {
   background: linear-gradient(90deg, #0b0b2e, #111144, #0b0b2e);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 60px;
+  padding: 12px 48px;              /* compacto pero cómodo en desktop */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 50, 0.3);
-  flex-wrap: wrap; /* permite que se acomode bien en pantallas pequeñas */
+  box-shadow: 0 2px 10px rgba(0, 0, 50, 0.18);
+  flex-wrap: wrap;
+  transition: padding 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  backdrop-filter: blur(6px);
 }
 
-/* ======== LOGO Y TÍTULO ======== */
-header .logo {
+/* Evita que el header tape el main: usa la variable --header-height */
+main {
+  padding-top: calc(var(--header-height) + 8px);
+}
+
+/* LOGO */
+.logo {
   display: flex;
   align-items: center;
-  gap: 15px; /* separación entre logo y texto */
-  flex-shrink: 0;
-}
-
-header .logo img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-header .logo h1 {
-  color: #ffffff;
-  font-size: 1.8rem;
+  gap: 12px;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #00b4ff, #8a7aff);
+  font-size: 1.6rem; /* legible en desktop */
+  background: linear-gradient(90deg,#00b4ff,#8a7aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0;
-  white-space: nowrap; /* evita que se parta en dos líneas */
+  margin-right: 500px; /* ✅ separación añadida entre el logo/título y el menú */
 }
 
-/* ======== NAVEGACIÓN ======== */
-nav {
-  flex-grow: 1; /* permite que el menú se mueva a la derecha */
+/* Si usas imagen en el logo */
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: width 200ms, height 200ms;
+}
+
+/* NAVEGACIÓN */
+.nav-links {
   display: flex;
-  justify-content: flex-end;
-}
-
-nav ul {
+  gap: 28px;
   list-style: none;
-  display: flex;
-  gap: 35px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
-nav ul li a {
+.nav-links li a {
   color: #d0d0ff;
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
-  position: relative;
+  padding: 8px 6px;
+  transition: color 180ms;
 }
 
-/* Subrayado animado */
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, #00b4ff, #8a7aff);
-  transition: width 0.3s ease;
+/* CTA principal (botón) — agrandado y táctil */
+.cta-button {
+  display: inline-block;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 1.03rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg,#5a48ff,#8a6aff);
+  box-shadow: 0 6px 18px rgba(100,80,255,0.18);
+  transition: transform 180ms, box-shadow 180ms;
+}
+.cta-button:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 25px rgba(100,80,255,0.28); 
 }
 
-nav ul li a:hover {
-  color: #ffffff;
+/* ======== Estado "scrolled" (shrink) ======== */
+header.header--scrolled {
+  padding: 6px 36px; /* se reduce al bajar */
+  box-shadow: 0 4px 14px rgba(0,0,50,0.38);
 }
+header.header--scrolled .logo { font-size: 1.1rem; margin-right: 20px; } /* mantiene la separación */
+header.header--scrolled .logo img { width: 36px; height: 36px; }
+header.header--scrolled .nav-links li a { font-size: 0.95rem; }
 
-nav ul li a:hover::after {
-  width: 100%;
+/* ======== MÓVIL / TABLET (restaurado y cómodo) ======== */
+@media (max-width: 900px) {
+  header {
+    padding: 14px 20px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .logo { 
+    font-size: 1.3rem; 
+    margin-right: 0; /* sin separación en móvil */
+  }
+
+  .logo img { width: 44px; height: 44px; }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
+    padding: 10px 12px;
+    display: inline-block;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  header.header--scrolled { padding: 8px 16px; }
+  header.header--scrolled .logo { font-size: 1.15rem; }
+
+  main { padding-top: calc(var(--header-height) + 12px); }
 }
 
 /* ======== RESPONSIVO ======== */
