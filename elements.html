@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Sobre Nosotros - Orbit Tecnología Pasto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      /* ==== VIDEO DE PORTADA ==== */
+      #banner-video {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      #banner-video video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+
+      #banner-video .content {
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.45);
+        padding: 2em 3em;
+        border-radius: 10px;
+        color: #fff;
+      }
+
+      #banner-video h2 {
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+      }
+
+      #banner-video p {
+        font-size: 1.1em;
+        color: #fff;
+      }
+
+      /* ==== GALERÍA DE MARCAS ==== */
+      .brands {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        margin-top: 3em;
+      }
+
+      .brands img {
+        width: 130px;
+        height: auto;
+        filter: brightness(0) invert(0);
+        transition: all 0.3s ease;
+      }
+
+      .brands img:hover {
+        transform: scale(1.1);
+        filter: brightness(1);
+      }
+
+      /* ==== MAPA (Pasto, Nariño) ==== */
+      .map-container {
+        max-width: 1100px;
+        margin: 2.2em auto;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+      }
+      .map-header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 0.8em;
+        font-size: 1.05rem;
+      }
+      .map-frame {
+        width: 100%;
+        height: 380px;
+        border: 0;
+        display: block;
+      }
+
+      /* ==== BOTÓN FLOTANTE WHATSAPP ==== */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #1ebe5d;
+        transform: scale(1.1);
+      }
+
+      .whatsapp-float i {
+        margin-top: 2px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 900px) {
+        #banner-video .content { padding: 1.2em 1.4em; }
+        .map-frame { height: 300px; }
+      }
+      @media (max-width: 480px) {
+        .brands img { width: 100px; }
+        .map-frame { height: 220px; }
+      }
+    </style>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Orbit Tecnología</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="generic.html">Catálogo Juegos</a></li>
+                  <li><a href="elements.html">Información</a></li>
+                  <li><a href="#">CATALOGO CAMARAS "PROXIMAMENTE"</a></li>
+                  <li><a href="#">CATALOGO ELECTRICIDAD "PROXIMAMENTE"</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- 🔹 Banner con video de fondo -->
+      <section id="banner-video">
+        <video autoplay muted loop playsinline>
+          <source src="video/video stok camara.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="content">
+          <h2>Sobre Nosotros</h2>
+          <p>Somos una empresa dedicada al mantenimiento, instalación y optimización tecnológica en Pasto.</p>
+        </div>
+      </section>
+
+      <!-- Contenido de información -->
+      <article id="main">
+        <section class="wrapper style5">
+          <div class="inner">
+            <h3>Nuestra Experiencia</h3>
+            <p>Contamos con años de experiencia en el mantenimiento de equipos, instalación de software, optimización de sistemas y venta de juegos digitales para PC y portátiles.</p>
+            <p>Trabajamos con las mejores marcas del mercado y ofrecemos soporte técnico profesional adaptado a cada cliente.</p>
+
+            <hr />
+
+            <h3>Marcas y Servicios</h3>
+            <p>Ofrecemos soluciones en tecnología con productos originales y servicios personalizados.</p>
+            <ul>
+              <li>Instalación de sistemas operativos y drivers</li>
+              <li>Optimización de equipos para juegos</li>
+              <li>Instalación de cámaras de seguridad y sistemas de vigilancia</li>
+              <li>Asesorías en hardware y software</li>
+            </ul>
+
+            <!-- 🔹 GALERÍA DE MARCAS -->
+            <div class="brands">
+              <img src="images/marca1.png" alt="Marca 1">
+              <img src="images/marca2.png" alt="Marca 2">
+              <img src="images/marca3.png" alt="Marca 3">
+              <img src="images/marca4.png" alt="Marca 4">
+              <img src="images/marca5.png" alt="Marca 5">
+            </div>
+
+            <!-- 🔹 MAPA EMBEBIDO: Pasto, Nariño -->
+            <div class="map-container" aria-label="Mapa de ubicación - Pasto Nariño">
+              <div class="map-header" style="background:transparent; margin-top:1.6em;">
+                <strong>Ubicación</strong> — Pasto, Nariño (Colombia)
+              </div>
+              <!-- Uso de un iframe de Google Maps con búsqueda "Pasto Nariño" -->
+              <iframe
+                class="map-frame"
+                src="https://maps.google.com/maps?q=Pasto%20Nari%C3%B1o&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de Pasto, Nariño">
+              </iframe>
+            </div>
+
+          </div>
+        </section>
+      </article>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-twitter"></a></li>
+          <li><a href="#" class="icon brands fa-facebook-f"></a></li>
+          <li><a href="#" class="icon brands fa-instagram"></a></li>
+          <li><a href="#" class="icon solid fa-envelope"></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Orbit Tecnología</li>
+          <li>Ubicación: Pasto, Nariño - Colombia</li>
+        </ul>
+      </footer>
+
+      <!-- 🔹 BOTÓN FLOTANTE DE WHATSAPP -->
+      <a href="https://wa.me/573196728955?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios%20de%20tecnología" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
