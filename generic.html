@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Catálogo - Orbit Tecnología</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/simple-lightbox.min.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      /* 🔹 Banner con video de fondo */
+      #banner-video {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+      #banner-video video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+      #banner-video .content {
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.45);
+        padding: 2em 3em;
+        border-radius: 10px;
+      }
+      #banner-video h2 {
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+      }
+      #banner-video p {
+        font-size: 1.1em;
+        color: #eee;
+      }
+
+      /* 🔹 Catálogo */
+      .features-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .features-grid > li {
+        width: 30%;
+        margin-bottom: 2em;
+        padding: 1.5em;
+        text-align: center;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+      .features-grid > li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      .features-grid .image img {
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+      }
+      .features-grid h4 {
+        margin-top: 0.8em;
+        color: #003049;
+      }
+      .features-grid p {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 1em;
+      }
+
+      /*  Botón WhatsApp */
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #25D366;
+        color: white !important;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95em;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+      }
+      .whatsapp-btn:hover {
+        background-color: #1ebe5d;
+        transform: scale(1.05);
+        box-shadow: 0 6px 14px rgba(37, 211, 102, 0.6);
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .boton-descarga-container {
+        text-align: center;
+        margin-top: 60px;
+      }
+      .btn-descargar {
+        display: inline-block;
+        background-color: #00b894;
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,184,148,0.4);
+      }
+      .btn-descargar:hover {
+        background-color: #019874;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0,184,148,0.6);
+      }
+
+      @media screen and (max-width: 980px) {
+        .features-grid > li {
+          width: 48%;
+        }
+      }
+      @media screen and (max-width: 736px) {
+        .features-grid > li {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">Orbit Tecnología</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <!-- RESTAURADO: el div#menu debe estar dentro de este li para que main.js lo maneje -->
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="generic.html">Catálogo Juegos</a></li>
+                  <li><a href="elements.html">Información</a></li>
+                  <li><a href="#">CATALOGO CAMARAS "PROXIMAMENTE"</a></li>
+                  <li><a href="#">CATALOGO ELECTRICIDAD "PROXIMAMENTE"</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- 🔹 Banner con video -->
+      <section id="banner-video">
+        <video autoplay muted loop playsinline>
+          <source src="video/gta 5 portada video.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="content">
+          <h2>Catálogo de Juegos y Ocio Digital</h2>
+          <p>Descubre nuestra selección de los mejores títulos listos para instalar y optimizar.</p>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <article id="main">
+        <section class="wrapper style5">
+          <div class="inner">
+            <h3>45 Juegos Optimizados para PC y Laptop</h3>
+            <p>El precio incluye la instalación profesional, optimización del sistema para el juego y soporte de compatibilidad.</p>
+
+            <ul class="features-grid">
+
+              <!-- 🎮 Juego 1 -->
+              <li>
+                <span class="image fit">
+                  <!-- href coincide con la imagen y tiene la clase de lightbox -->
+                  <a href="images/juego_01.jpg" class="lightbox-trigger">
+                    <img src="images/juego_01.jpg" alt="Carátula del Juego 1">
+                  </a>
+                </span>
+                <h4>Nombre del Juego 1</h4>
+                <p>Descripción o categoría del juego. <br><strong>Precio: $00.000</strong></p>
+                <div class="actions">
+                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%201" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                  </a>
+                </div>
+              </li>
+
+              <!-- 🎮 Juego 2 -->
+              <li>
+                <span class="image fit">
+                  <a href="images/juego_02.jpg" class="lightbox-trigger">
+                    <img src="images/juego_02.jpg" alt="Carátula del Juego 2">
+                  </a>
+                </span>
+                <h4>Nombre del Juego 2</h4>
+                <p>Descripción o categoría del juego. <br><strong>Precio: $00.000</strong></p>
+                <div class="actions">
+                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%202" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                  </a>
+                </div>
+              </li>
+
+              <!-- 🎮 Juego 3 -->
+              <li>
+                <span class="image fit">
+                  <!-- Aseguré que el href apunte al mismo archivo que la imagen que pusiste -->
+                  <a href="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" class="lightbox-trigger">
+                    <img src="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" alt="Carátula del Juego 3">
+                  </a>
+                </span>
+                <h4>Nombre del Juego 3</h4>
+                <p>Descripción o categoría del juego. <br><strong>Precio: $00.000</strong></p>
+                <div class="actions">
+                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%203" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                  </a>
+                </div>
+              </li>
+
+              <!-- 🔸 Puedes copiar y pegar este bloque de <li> para agregar más juegos manualmente -->
+
+            </ul>
+
+            <!-- BOTÓN DESCARGA -->
+            <div class="boton-descarga-container">
+              <a href="#" class="btn-descargar">Descargar componentes necesarios</a>
+            </div>
+
+            <hr />
+            <p style="text-align: center; margin-top: 3em;">¿Buscas un juego que no está en la lista? ¡Pregúntanos! Instalamos cualquier título compatible con tu equipo.</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-twitter"></a></li>
+          <li><a href="#" class="icon brands fa-facebook-f"></a></li>
+          <li><a href="#" class="icon brands fa-instagram"></a></li>
+          <li><a href="#" class="icon brands fa-dribbble"></a></li>
+          <li><a href="#" class="icon solid fa-envelope"></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Orbit Tecnología</li>
+          <li>PASTO <a href="http://html5up.net">Nariñó</a></li>
+        </ul>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- SimpleLightbox -->
+    <script src="assets/js/simple-lightbox.min.js"></script>
+    <script>
+      // Inicializa SimpleLightbox cuando la página esté lista.
+      document.addEventListener('DOMContentLoaded', function () {
+        // selector .lightbox-trigger para todas las imágenes en el catálogo
+        if (typeof SimpleLightbox === 'function') {
+          new SimpleLightbox('.lightbox-trigger', {
+            captionsData: 'alt',
+            captionDelay: 150
+          });
+        }
+
+        // --- OPCIONAL: si prefieres que al hacer clic NO pase nada,
+        //      descomenta las siguientes líneas y añade la clase "no-link"
+        //      a los <a> que quieras desactivar.
+        //
+        // document.querySelectorAll('a.no-link').forEach(a => {
+        //   a.addEventListener('click', function(e){ e.preventDefault(); });
+        // });
+      });
+    </script>
+
+  </body>
+</html>
