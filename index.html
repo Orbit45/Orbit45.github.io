@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
+    <!-- Fuente moderna estilo tecnología -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
     <style>
         html, body {
             height: 100%;
@@ -33,7 +37,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            pointer-events: none; /* evita clics o ampliaciones */
+            pointer-events: none;
         }
 
         #banner .inner {
@@ -52,15 +56,27 @@
             transform: translateY(0);
         }
 
+        /* 🔹 Título principal con diseño Orbitron y degradado */
         #banner .inner h2 {
+            font-family: 'Orbitron', sans-serif;
             font-size: 3em;
-            line-height: 1.2em;
+            font-weight: 800;
+            background: linear-gradient(90deg, #4b00b5, #00b3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 179, 255, 0.3);
         }
 
+        /* 🔹 Subtítulo con color suave similar al logo */
         #banner .inner p {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.2em;
             line-height: 1.5em;
             margin-top: 1em;
+            color: #cce7ff;
+            text-shadow: 0 0 10px rgba(75, 0, 181, 0.3);
         }
 
         #banner .actions.special {
@@ -72,7 +88,6 @@
             margin-top: 40px;
         }
 
-        /* Bloquear interacción con todos los videos de fondo */
         video[autoplay][loop][muted] {
             pointer-events: none;
         }
@@ -126,20 +141,22 @@
                 tu aliado en CCTV, reparaciones y más.</p>
             
             <ul class="actions special">
-                <li><a href="https://www.facebook.com/OrbitTecnologia" class="button primary">Visitanos en Facebook</a></li>
+                <li><a href="https://www.facebook.com/OrbitTecnologia" class="button primary">Visítanos en Facebook</a></li>
             </ul>
         </div>
 
-        <a href="#one" class="more scrolly">Mas Informacion</a>
+        <a href="#one" class="more scrolly">Más Información</a>
     </section>
 
+    <!-- 🔹 El resto del contenido se mantiene igual -->
+    <!-- NO SE MODIFICÓ NADA DE AQUÍ EN ADELANTE -->
+    
     <section id="one" class="wrapper style1 special">
         <div class="inner">
             <header class="major">
                 <h2>Soluciones Integrales<br />  en Seguridad y Soporte IT</h2>
                 <p>Es su socio de confianza con más de 10 años de experiencia en tecnología.<br /> Ofrecemos Soluciones de Seguridad Electrónica (instalación de CCTV, cámaras, alarmas <br> domésticas, controles de acceso, etc),</p>
                 <p>Brindamos Soporte Informático completo (formateo, mantenimiento,<br> reparación de PC/laptops e instalación de juegos y programas). <br> Y aseguramos una conectividad óptima con servicios de Redes e Internet </p>
-            
             </header>
             <ul class="icons major">
                 <li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
@@ -253,7 +270,6 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- 🔹 Animación del título al cargar -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const inner = document.querySelector("#banner .inner");
