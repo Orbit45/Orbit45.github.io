@@ -1,204 +1,249 @@
- <!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orbit Tecnologia</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        #banner .inner {
+            z-index: 2;
+            color: #fff;
+            padding: 0 20px;
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        #banner .inner h2 {
+            font-size: 3em;
+            line-height: 1.2em;
+        }
+
+        #banner .inner p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            margin-top: 1em;
+        }
+
+        #banner .actions.special {
+            margin-top: 2em;
+        }
+
+        #banner .more.scrolly {
+            z-index: 2;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 1280px) {
+            #banner .inner h2 { font-size: 2.5em; }
+            #banner .inner p { font-size: 1.1em; }
+        }
+
+        @media screen and (max-width: 736px) {
+            #banner .inner h2 { font-size: 2em; }
+            #banner .inner p { font-size: 1em; }
+            #banner .more.scrolly { margin-top: 20px; }
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <div class="logo">Orbit Tecnologia </div>
-            <ul class="nav-links">
-                <li><a href="#">Inicio </a></li>
-                <li><a href="#Catalogo">Catalogo </a> </li>
-                <li><a href="#informacion">Informacion</a> </li>
-                <li><a href="#Contacto">Contacto</a> </li>
+<body class="landing is-preload">
 
+<div id="page-wrapper">
+
+    <header id="header" class="alt">
+        <h1><a href="index.html">Orbit Tecnologia</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="generic.html">Catalogo Juegos</a></li>
+                            <li><a href="elements.html">Informacion</a></li>
+                            <li><a href="#">CATALOGO CAMARAS "PROXIMAMENTE"</a></li>
+                            <li><a href="#">CATALOGO ELECTRICIDAD "PROXIMAMENTE"</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="hero">
-  <h1>Bienvenido a Orbit Tecnología Pasto</h1>
-  <h2>Soluciones tecnológicas integrales en seguridad, conectividad y mantenimiento</h2>
 
-  <a href="https://www.facebook.com/OrbitTecnologia/?locale=es_LA" 
-     target="_blank" 
-     class="cta-button">
-     Visítanos en Facebook
-  </a>
-</section>
-        <section id="Catalogo">
-            <h2> Productos Destacados</h2>
-            <div class="Catalogo-grit">
-                <div class="Catalogo-card">
-                    <img src="img/eFootball-PES-2021.jpg" alt="PES 21">
-                    <h3>PES 21 Efootball (SOLO PC) </h3>
-                    <P class="Precio"> 7.000 Col</P>
-                    <p class="descripcion"> Juego de futbol para PC </p>
-                    <p class="descripcion2">Requisitos Para poder jugar (PC):
-                    <p> Requisitos minimos: </p>
-                    </p> Sistema operativo: Windows 8.1/10/11 - 64bit <br>
-                    Procesador: Intel Core i5-3470 / AMD FX 4350 <br>
-                    Memoria: 8 GB de RAM <br>
-                    Gráficos: NVIDIA GTX 670 / AMD Radeon HD 7870 <br>
-                    Red: Conexión de banda ancha a Internet <br>
-                    Almacenamiento: 40 GB de espacio disponible <br>
-                    <p>Requisitos recomendados:</p>
-                    Sistema operativo: Windows 10 (64-bit) <br>
-                    Procesador: Intel Core i7-3770 / AMD FX 8350 <br>
-                    Memoria: 8 GB de RAM <br>
-                    Gráficos: NVIDIA GTX 760 / AMD Radeon R9 270X <br>
-                    Almacenamiento: 11 GB de espacio disponible <br> </p>
-                    <p> Metodo de instalacion <br>
-                        La instalacion se hace mediante el programa Anydesk <br>
-                        o de forma presencial unicamente en la ciudad de Pasto
-                    <p> Metodo de pago <br>
-                        El pago se realiza despues de la descarga <br>
-                        de los 3 archivos y el programa de optimizacion,<br>
-                        el pago se realiza por medio de Nequi o tarjeta debito. <br>
-                    </p>
-                    <a href="https://www.mediafire.com/file/g2fntbk1qxfbvju/visuales+C+++2024.ZIP/file"><button class="cta-button" >Componentes Necesarios</button></a>
-                    <button class="cta-button" onclick="window.location.href='catalogo.html'">Ver detalles</button>
+    <section id="banner">
+        <video class="video-background" muted autoplay loop>
+            <source src="./video/14203516_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
 
-                </div>
-                <div class="Catalogo-card">
-                    <img src="img/GTA V.jpg" alt="PES 21">
-                    <h3> GTA V (SOLO PC) </h3>
-                    <P class="Precio"> 10.000 Col</P>
-                    <p class="descripcion"> Juego de Accion </p>
-                    <p class="descripcion2">Requisitos Para poder jugar (PC):
-                    <p> Requisitos minimos: </p>
-                    </p> Sistema operativo: Windows 8.1/10/11 - 64bit <br>
-                    Procesador: Intel Core i7-4770 / AMD FX-9590 <br>
-                    Memoria: 8 GB de RAM <br>
-                    Gráficos: NVIDIA GeForce GTX 1630 (4GB VRAM) / AMD Radeon RX 6400 (4GB VRAM) <br>
-                    Red: Conexión de banda ancha a Internet <br>
-                    Almacenamiento: 140 GB de espacio disponible <br>
-                    <p>Requisitos recomendados:</p>
-                    Sistema operativo: Windows 10 (64-bit) <br>
-                    Procesador: Intel Core i5-9600K / AMD Ryzen 5 3600 <br>
-                    Memoria: 16 GB de RAM <br>
-                    Gráficos: NVIDIA GeForce RTX 3060 (8GB VRAM) / AMD Radeon RX 6600XT (8 GB VRAM) <br>
-                    Almacenamiento: 140 GB de espacio disponible <br> </p>
-                    <p> Metodo de instalacion: <br>
-                        La instalacion se hace mediante el programa Anydesk <br>
-                        o de forma presencial unicamente en la ciudad de Pasto.
-                    <p> Metodo de pago: <br>
-                        El pago se realiza despues de la descarga <br>
-                        de los 3 archivos y el programa de optimizacion,<br>
-                        el pago se realiza por medio de Nequi o tarjeta debito.
-                    </p>
-                    <a href="https://www.mediafire.com/file/g2fntbk1qxfbvju/visuales+C+++2024.ZIP/file"><button class="cta-button" >Componentes Necesarios</button></a> <br>
-                    <br>
-                    <br>
-                    <button>Ver detalles</button>
-                </div>
-                <div class="Catalogo-card">
-                    <img src="img/Cyberpunk-2077.jpg" alt="PES 21">
-                    <h3>Cyberpunk 2077 (SOLO PC) </h3>
-                    <P class="Precio"> 8.000 Col</P>
-                    <p class="descripcion"> Juego de Accion </p>
-                    <p class="descripcion2">Requisitos Para poder jugar (PC):
-                    <p> Requisitos minimos: </p>
-                    </p> Sistema operativo: Windows 10/11 - 64bit <br>
-                    Procesador: Core i7-6700 / Ryzen 5 1600 <br>
-                    Memoria: 16 GB de RAM <br>
-                    Gráficos: GeForce GTX 1060 6GB / Radeon RX 580 8GB or Arc A380 <br>
-                    Red: Conexión de banda ancha a Internet <br>
-                    Almacenamiento: 100 GB de espacio disponible SSD <br>
-                    <p>Requisitos recomendados:</p>
-                    Sistema operativo: Windows 10 / 11 (64-bit) <br>
-                    Procesador: Core i7-12700 / Ryzen 7 7800X3D <br>
-                    Memoria: 18 GB de RAM <br>
-                    Gráficos: GeForce RTX 2060 SUPER / Radeon RX 5700 XT / Arc A770 <br>
-                    Almacenamiento: 110 GB de espacio disponible <br> </p>
-                    <p> Metodo de instalacion: <br>
-                        La instalacion se hace mediante el programa Anydesk <br>
-                        o de forma presencial unicamente en la ciudad de Pasto.
-                    <p> Metodo de pago: <br>
-                        El pago se realiza despues de la descarga <br>
-                        de los 3 archivos y el programa de optimizacion,<br>
-                        el pago se realiza por medio de Nequi o tarjeta debito.
-                    </p>
-                    <a href="https://www.mediafire.com/file/g2fntbk1qxfbvju/visuales+C+++2024.ZIP/file"><button class="cta-button" >Componentes Necesarios</button></a> <br>
-                    <br>
-                    <br>
-                    <button>Ver detalles</button>
-                </div>
-            </div>
-        </section>
-        <div class="ver-catalogo-btn" style="text-align:center; margin-top: 40px;">
-        <a href="catalogo.html" class="cta-button">Ver catálogo completo</a>
-      </div>
-    </section>
-    <br>
-    <br>
-    <br>
-        <section id="informacion">
-            <h1> Sobre Nosotros </h1>
-            <div class="Informacion-grid">
-                <div class="Informacion-card">
-
-                    <p>
-                En Orbit Tecnología somos una microempresa con más de 10 años de experiencia ofreciendo soluciones
-                integrales en tecnología, seguridad y conectividad.
-                Nos especializamos en mantenimiento y optimización de computadoras, instalación de programas, sistemas y
-                juegos, así como en la implementación de redes de internet, antenas punto a punto y sistemas eléctricos
-                tanto domiciliarios como industriales.<br>
-                <br>
-                También somos expertos en seguridad electrónica y CCTV, brindando servicios de instalación,
-                configuración y mantenimiento de cámaras de seguridad, DVR, NVR, XVR, alarmas y sistemas de monitoreo.
-                Nos encargamos de desbloqueos, ajustes técnicos y actualizaciones para garantizar el funcionamiento
-                óptimo y seguro de todos los equipos. <br>
-                <br>
-                En Orbit Tecnología trabajamos con compromiso, responsabilidad y enfoque en la satisfacción de nuestros
-                clientes. <br>
-                Ofrecemos cotizaciones sin compromiso, garantía en todos nuestros productos y servicios, y la
-                posibilidad de realizar instalaciones dentro y fuera del departamento de Nariño, llegando a diferentes
-                partes de Colombia. <br>
-                <br>
-                Aunque somos una tienda virtual, brindamos atención personalizada, asesoría técnica y visitas
-                presenciales cuando se requiere.
-                Nuestro objetivo es seguir creciendo y consolidarnos como una empresa confiable y moderna en el ámbito
-                tecnológico y de seguridad. <br>
-
-                Orbit Tecnología — Soluciones que conectan, protegen y optimizan tu mundo.
-            </p>
-
-                </div>
-
-            </div>
+        <div class="inner">
+            <h2>ORBIT TECNOLOGIA</h2>
+            <p>Una excelente solución tecnológica para la seguridad,   <br />
+                y optimización de sistemas.<br />
+                tu aliado en CCTV, reparaciones y más.</p>
             
+            <ul class="actions special">
+                <li><a href="https://www.facebook.com/OrbitTecnologia" class="button primary">Visitanos en Facebook</a></li>
+            </ul>
+        </div>
+
+        <a href="#one" class="more scrolly">Mas Informacion</a>
+    </section>
+
+    <section id="one" class="wrapper style1 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Soluciones Integrales<br />  en Seguridad y Soporte IT</h2>
+                <p>Es su socio de confianza con más de 10 años de experiencia en tecnología.<br /> Ofrecemos Soluciones de Seguridad Electrónica (instalación de CCTV, cámaras, alarmas <br> domésticas, controles de acceso, etc),</p>
+                <p>Brindamos Soporte Informático completo (formateo, mantenimiento,<br> reparación de PC/laptops e instalación de juegos y programas). <br> Y aseguramos una conectividad óptima con servicios de Redes e Internet </p>
+            
+            </header>
+            <ul class="icons major">
+                <li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+                <li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+                <li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="two" class="wrapper alt style2">
+        <section class="spotlight">
+            <div class="video">
+    <video width="100%" height="auto" controls autoplay loop muted>
+        <source src="video/camara 2.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+</div>
+<div class="content">
+    <h2>Instalación Profesional de <br /> Cámaras de Seguridad (CCTV)</h2>
+    <p>En Orbit Tecnología, instalamos sistemas de Circuito Cerrado de Televisión (CCTV)
+        robustos y confiables, diseñados para proteger lo que más importa.<br>
+          Con más de 10 años de experiencia, garantizamos una videovigilancia de alta calidad adaptada a las necesidades específicas de tu hogar o negocio.</p>
+</div>
         </section>
-        <section id="Contacto">
-            <h2>Contacto</h2>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+        
+        <section class="spotlight">
+            <div class="content">
+                <h2> Instalaciones Eléctricas <br /> bajo Norma RETIE</h2>
+                <p>En Orbit Tecnología, su seguridad es nuestra máxima prioridad. Contamos con más de 17 años de experiencia <br> 
+                 realizando instalaciones eléctricas profesionales, cumpliendo estrictamente con el Reglamento Técnico de Instalaciones Eléctricas (RETIE) de Colombia. <br>
+                   Nos encargamos de todas sus necesidades eléctricas, desde el cableado y las remodelaciones completas hasta la instalación de bombillos y luminarias. <br>
+                   Trabajamos con varios presupuestos y ajustamos cada proyecto a su medida, asegurando siempre la calidad, la durabilidad y el máximo nivel de seguridad exigido por la ley. </p>
+            </div>
+            <div class="image">
+                <video width="100%" height="auto" autoplay loop muted>
+                    <source src="video/instalacion mt.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
         </section>
 
-        <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-<a href="https://wa.me/573196728955" 
-   class="whatsapp-float" 
-   target="_blank" 
-   title="Chatea con nosotros por WhatsApp">
-   <img src="img/whatsapp_logo_icon_154480.png" alt="WhatsApp" />
-   <span>Escríbenos</span>
-</a> 
+       <section class="spotlight">
+    <div class="content">
+        <h2>  Soporte Técnico, <br /> Mantenimiento de Computadoras</h2>
+        <p>En Orbit Tecnología, nos aseguramos de que sus equipos funcionen a su máximo rendimiento. <br>
+		
+		 Ofrecemos un servicio integral de Soporte Informático para PC y laptops, orientado a resolver cualquier problema de software o hardware. </p>
+    </div>
+    
+    <div class="image">
+        <video width="100%" height="auto" autoplay loop muted>
+            <source src="video/huellero.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+   		
+        </section>
+    
+    <section id="three" class="wrapper style3 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Servicios extra</h2>
+                <p>En Orbit Tecnología, extendemos nuestro expertise para garantizar que su vida digital funcione sin problemas. <br /> Le ofrecemos una solución completa que va más allá del mantenimiento básico</p>
+            </header>
+            <ul class="features">
+                <li class="icon fa-paper-plane"><h3>Instalación y Optimización de Juegos</h3><p>¿Quieres que tus juegos corran a la perfección? Nos encargamos de la instalación, configuración y optimización profesional de tus videojuegos favoritos en PC o laptop. Aseguramos que los drivers y el software de apoyo estén listos para brindarte la máxima performance y experiencia de juego, sin lags ni errores de instalación. ¡Solo preocúpate por jugar!</p></li>
+                <li class="icon solid fa-laptop"><h3>Instalación de Software Esencial y Profesional</h3><p>Instalamos y configuramos todo el software esencial y profesional que necesitas para trabajar o estudiar. Desde suites de oficina (Office) y programas de diseño o arquitectura, hasta antivirus y aplicaciones especializadas. Garantizamos una instalación limpia y activada, asegurando la estabilidad y el correcto licenciamiento de todos sus programas.</p></li>
+                <li class="icon solid fa-code"><h3>Instalación y Certificación de Puntos de Red</h3><p> Maximizamos la velocidad y estabilidad de su red cableada. Diseñamos e instalamos puntos de red Ethernet y cableado estructurado en oficinas u hogares. Solucionamos problemas de inestabilidad y certificamos la infraestructura para que cada conexión de su negocio funcione a la máxima capacidad y eficiencia</p></li>
+                <li class="icon solid fa-headphones-alt"><h3>Cobertura Wi-Fi Total y Puntos de Internet</h3><p>Elimine las zonas muertas de Wi-Fi. Nos especializamos en instalar y configurar repetidores, extensores y routers de alto rendimiento para asegurar que tenga cobertura total en cada rincón de su propiedad. Solucionamos la lenta conexión y la inestabilidad, garantizando una experiencia de Internet fluida y sin interrupciones.</p></li>
+                <li class="icon fa-heart"><h3>Servicios Avanzados: Recuperación y Seguridad Digital</h3><p> En Orbit Tecnología, instalamos sistemas de CCTV robustos con más de 10 años de experiencia.
 
-    </main>
+										Ofrecemos instalación y configuración de cámaras (IP, HD) y grabadores (DVR/NVR), incluyendo el acceso remoto total desde su smartphone.
 
-    <footer>
-        <p>© Orbit tecnologia Copyright Todos los derechos reservados.PRUEBA</p>
+										Somos especialistas en Soporte Avanzado: si olvidas tu contraseña, realizamos el desbloqueo profesional de grabadores sin perder tus grabaciones.
+
+										Confía en nosotros para una solución de seguridad efectiva y profesional.</p></li>
+                <li class="icon fa-flag"><h3>Compromiso y Experiencia de Orbit Tecnología</h3><p>En Orbit Tecnología, su tranquilidad es nuestra prioridad. Contamos con más de 10 años de experiencia en tecnología y 17 años en el sector eléctrico. Incluimos garantía total en todos nuestros servicios, desde la instalación de CCTV y soporte de PC hasta los trabajos eléctricos bajo norma RETIE. Confíe en nuestra expertise para un trabajo rápido, limpio y seguro que garantiza un rendimiento óptimo a largo plazo.</p></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cta" class="wrapper style4">
+        <div class="inner">
+            <header>
+                <h2>cotizacion </h2>
+                <p>Sabemos que cada necesidad es única. Por eso, te ofrecemos dos vías rápidas y sencillas para recibir una cotización precisa y detallada de cualquiera de nuestros servicios (Electricidad, Seguridad, Redes, o Soporte Técnico).
+
+¡La cotización es totalmente gratuita y sin compromiso!</p>
+            </header>
+            <ul class="actions stacked">
+                <li><a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%203" class="button fit primary">WhatsApp</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSecaDWfa7GtDO_bb6493lTZ4UR6iypthIKROe87Iyeyyz1MdA/viewform?usp=dialog" class="button fit">COTIZA YA</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://www.facebook.com/OrbitTecnologia" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; ORBIT TECNOLOGIA </li><li>PASTO  <a href="https://www.facebook.com/OrbitTecnologia">NARIÑO</a></li>
+        </ul>
     </footer>
-</body>
 
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
