@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/simple-lightbox.min.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- Fuente para el estilo del título (coincide con diseño anterior) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
     <style>
       /* 🔹 Banner con video de fondo */
       #banner-video {
@@ -30,6 +33,7 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
         z-index: 0;
+        pointer-events: none; /* evita que el video de fondo reciba clics */
       }
       #banner-video .content {
         position: relative;
@@ -133,6 +137,30 @@
         background-color: #019874;
         transform: scale(1.05);
         box-shadow: 0 6px 16px rgba(0,184,148,0.6);
+      }
+
+      /* ====== Estilos del header/title (aplico el mismo diseño que en la otra página) ====== */
+      #header h1 a {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        background: linear-gradient(90deg, #4b00b5, #00b3ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(0,179,255,0.10);
+      }
+
+      /* Mejora contraste del menú desplegable para legibilidad (no cambia estructura) */
+      #menu {
+        background: rgba(10, 8, 20, 0.88);
+      }
+      #menu ul li a {
+        color: #e6f6ff;
+      }
+      #menu ul li a:hover {
+        color: #00b3ff;
       }
 
       @media screen and (max-width: 980px) {

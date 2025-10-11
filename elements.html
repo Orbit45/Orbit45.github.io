@@ -7,7 +7,34 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- 🔹 Fuente igual al catálogo -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
     <style>
+      /* ====== Estilos del header/title (idéntico al catálogo) ====== */
+      #header h1 a {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        background: linear-gradient(90deg, #4b00b5, #00b3ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(0,179,255,0.10);
+      }
+
+      /* Menú igual al catálogo */
+      #menu {
+        background: rgba(10, 8, 20, 0.88);
+      }
+      #menu ul li a {
+        color: #e6f6ff;
+      }
+      #menu ul li a:hover {
+        color: #00b3ff;
+      }
+
       /* ==== VIDEO DE PORTADA ==== */
       #banner-video {
         position: relative;
@@ -48,7 +75,7 @@
 
       #banner-video p {
         font-size: 1.1em;
-        color: #fff;
+        color: #eee;
       }
 
       /* ==== GALERÍA DE MARCAS ==== */
@@ -123,7 +150,7 @@
         margin-top: 2px;
       }
 
-      /* Responsive adjustments */
+      /* Responsive */
       @media (max-width: 900px) {
         #banner-video .content { padding: 1.2em 1.4em; }
         .map-frame { height: 300px; }
@@ -139,6 +166,7 @@
 
   <body class="is-preload">
     <div id="page-wrapper">
+
       <!-- Header -->
       <header id="header">
         <h1><a href="index.html">Orbit Tecnología</a></h1>
@@ -172,7 +200,7 @@
         </div>
       </section>
 
-      <!-- Contenido de información -->
+      <!-- Contenido -->
       <article id="main">
         <section class="wrapper style5">
           <div class="inner">
@@ -200,12 +228,11 @@
               <img src="images/marca5.png" alt="Marca 5">
             </div>
 
-            <!-- 🔹 MAPA EMBEBIDO: Pasto, Nariño -->
+            <!-- 🔹 MAPA -->
             <div class="map-container" aria-label="Mapa de ubicación - Pasto Nariño">
               <div class="map-header" style="background:transparent; margin-top:1.6em;">
                 <strong>Ubicación</strong> — Pasto, Nariño (Colombia)
               </div>
-              <!-- Uso de un iframe de Google Maps con búsqueda "Pasto Nariño" -->
               <iframe
                 class="map-frame"
                 src="https://maps.google.com/maps?q=Pasto%20Nari%C3%B1o&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -234,7 +261,7 @@
         </ul>
       </footer>
 
-      <!-- 🔹 BOTÓN FLOTANTE DE WHATSAPP -->
+      <!-- 🔹 BOTÓN WHATSAPP -->
       <a href="https://wa.me/573196728955?text=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios%20de%20tecnología" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
       </a>
