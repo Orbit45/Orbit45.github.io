@@ -33,12 +33,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            pointer-events: none; /* ✅ evita interacción con el video */
-        }
-
-        /* ✅ Evita clic en todos los videos */
-        video {
-            pointer-events: none;
+            pointer-events: none; /* evita clics o ampliaciones */
         }
 
         #banner .inner {
@@ -47,6 +42,14 @@
             padding: 0 20px;
             max-width: 900px;
             box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        #banner .inner.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         #banner .inner h2 {
@@ -67,6 +70,11 @@
         #banner .more.scrolly {
             z-index: 2;
             margin-top: 40px;
+        }
+
+        /* Bloquear interacción con todos los videos de fondo */
+        video[autoplay][loop][muted] {
+            pointer-events: none;
         }
 
         @media screen and (max-width: 1280px) {
@@ -161,9 +169,9 @@
             <div class="content">
                 <h2> Instalaciones Eléctricas <br /> bajo Norma RETIE</h2>
                 <p>En Orbit Tecnología, su seguridad es nuestra máxima prioridad. Contamos con más de 17 años de experiencia <br> 
-                 realizando instalaciones eléctricas profesionales, cumpliendo estrictamente con el Reglamento Técnico de Instalaciones Eléctricas (RETIE) de Colombia. <br>
-                   Nos encargamos de todas sus necesidades eléctricas, desde el cableado y las remodelaciones completas hasta la instalación de bombillos y luminarias. <br>
-                   Trabajamos con varios presupuestos y ajustamos cada proyecto a su medida, asegurando siempre la calidad, la durabilidad y el máximo nivel de seguridad exigido por la ley. </p>
+                realizando instalaciones eléctricas profesionales, cumpliendo estrictamente con el Reglamento Técnico de Instalaciones Eléctricas (RETIE) de Colombia. <br>
+                Nos encargamos de todas sus necesidades eléctricas, desde el cableado y las remodelaciones completas hasta la instalación de bombillos y luminarias. <br>
+                Trabajamos con varios presupuestos y ajustamos cada proyecto a su medida, asegurando siempre la calidad, la durabilidad y el máximo nivel de seguridad exigido por la ley. </p>
             </div>
             <div class="image">
                 <video width="100%" height="auto" autoplay loop muted playsinline>
@@ -173,12 +181,13 @@
             </div>
         </section>
 
-       <section class="spotlight">
+        <section class="spotlight">
             <div class="content">
                 <h2>  Soporte Técnico, <br /> Mantenimiento de Computadoras</h2>
                 <p>En Orbit Tecnología, nos aseguramos de que sus equipos funcionen a su máximo rendimiento. <br>
                 Ofrecemos un servicio integral de Soporte Informático para PC y laptops, orientado a resolver cualquier problema de software o hardware. </p>
             </div>
+            
             <div class="image">
                 <video width="100%" height="auto" autoplay loop muted playsinline>
                     <source src="video/huellero.mp4" type="video/mp4">
@@ -186,7 +195,8 @@
                 </video>
             </div>
         </section>
-    
+    </section>
+
     <section id="three" class="wrapper style3 special">
         <div class="inner">
             <header class="major">
@@ -194,7 +204,15 @@
                 <p>En Orbit Tecnología, extendemos nuestro expertise para garantizar que su vida digital funcione sin problemas. <br /> Le ofrecemos una solución completa que va más allá del mantenimiento básico</p>
             </header>
             <ul class="features">
-                <li class="icon fa-paper-plane"><h3>Instalación y Optimización de Juegos</h3><p>¿Quieres que tus juegos corran a la perfección? Nos encargamos de la instalación, configuración y optimización profesional de tus videojuegos favoritos en PC o laptop...</p></li>
+                <li class="icon fa-paper-plane"><h3>Instalación y Optimización de Juegos</h3><p>¿Quieres que tus juegos corran a la perfección? Nos encargamos de la instalación, configuración y optimización profesional de tus videojuegos favoritos en PC o laptop. Aseguramos que los drivers y el software de apoyo estén listos para brindarte la máxima performance y experiencia de juego, sin lags ni errores de instalación. ¡Solo preocúpate por jugar!</p></li>
+                <li class="icon solid fa-laptop"><h3>Instalación de Software Esencial y Profesional</h3><p>Instalamos y configuramos todo el software esencial y profesional que necesitas para trabajar o estudiar. Desde suites de oficina (Office) y programas de diseño o arquitectura, hasta antivirus y aplicaciones especializadas. Garantizamos una instalación limpia y activada, asegurando la estabilidad y el correcto licenciamiento de todos sus programas.</p></li>
+                <li class="icon solid fa-code"><h3>Instalación y Certificación de Puntos de Red</h3><p> Maximizamos la velocidad y estabilidad de su red cableada. Diseñamos e instalamos puntos de red Ethernet y cableado estructurado en oficinas u hogares. Solucionamos problemas de inestabilidad y certificamos la infraestructura para que cada conexión de su negocio funcione a la máxima capacidad y eficiencia</p></li>
+                <li class="icon solid fa-headphones-alt"><h3>Cobertura Wi-Fi Total y Puntos de Internet</h3><p>Elimine las zonas muertas de Wi-Fi. Nos especializamos en instalar y configurar repetidores, extensores y routers de alto rendimiento para asegurar que tenga cobertura total en cada rincón de su propiedad. Solucionamos la lenta conexión y la inestabilidad, garantizando una experiencia de Internet fluida y sin interrupciones.</p></li>
+                <li class="icon fa-heart"><h3>Servicios Avanzados: Recuperación y Seguridad Digital</h3><p> En Orbit Tecnología, instalamos sistemas de CCTV robustos con más de 10 años de experiencia.
+                Ofrecemos instalación y configuración de cámaras (IP, HD) y grabadores (DVR/NVR), incluyendo el acceso remoto total desde su smartphone.
+                Somos especialistas en Soporte Avanzado: si olvidas tu contraseña, realizamos el desbloqueo profesional de grabadores sin perder tus grabaciones.
+                Confía en nosotros para una solución de seguridad efectiva y profesional.</p></li>
+                <li class="icon fa-flag"><h3>Compromiso y Experiencia de Orbit Tecnología</h3><p>En Orbit Tecnología, su tranquilidad es nuestra prioridad. Contamos con más de 10 años de experiencia en tecnología y 17 años en el sector eléctrico. Incluimos garantía total en todos nuestros servicios, desde la instalación de CCTV y soporte de PC hasta los trabajos eléctricos bajo norma RETIE. Confíe en nuestra expertise para un trabajo rápido, limpio y seguro que garantiza un rendimiento óptimo a largo plazo.</p></li>
             </ul>
         </div>
     </section>
@@ -203,10 +221,11 @@
         <div class="inner">
             <header>
                 <h2>cotizacion </h2>
-                <p>Sabemos que cada necesidad es única...</p>
+                <p>Sabemos que cada necesidad es única. Por eso, te ofrecemos dos vías rápidas y sencillas para recibir una cotización precisa y detallada de cualquiera de nuestros servicios (Electricidad, Seguridad, Redes, o Soporte Técnico).
+                ¡La cotización es totalmente gratuita y sin compromiso!</p>
             </header>
             <ul class="actions stacked">
-                <li><a href="https://wa.me/573196728955" class="button fit primary">WhatsApp</a></li>
+                <li><a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%203" class="button fit primary">WhatsApp</a></li>
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSecaDWfa7GtDO_bb6493lTZ4UR6iypthIKROe87Iyeyyz1MdA/viewform?usp=dialog" class="button fit">COTIZA YA</a></li>
             </ul>
         </div>
@@ -214,7 +233,10 @@
 
     <footer id="footer">
         <ul class="icons">
-            <li><a href="https://www.facebook.com/OrbitTecnologia" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-twitter"></a></li>
+            <li><a href="https://www.facebook.com/OrbitTecnologia" class="icon brands fa-facebook-f"></a></li>
+            <li><a href="#" class="icon brands fa-instagram"></a></li>
+            <li><a href="#" class="icon solid fa-envelope"></a></li>
         </ul>
         <ul class="copyright">
             <li>&copy; ORBIT TECNOLOGIA </li><li>PASTO <a href="https://www.facebook.com/OrbitTecnologia">NARIÑO</a></li>
@@ -231,12 +253,11 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- ✅ Fix animación móvil -->
+<!-- 🔹 Animación del título al cargar -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(() => {
-    document.body.classList.remove('is-preload');
-  }, 300);
+    const inner = document.querySelector("#banner .inner");
+    setTimeout(() => inner.classList.add("visible"), 300);
 });
 </script>
 
