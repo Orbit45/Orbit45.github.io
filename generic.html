@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="assets/css/simple-lightbox.min.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Fuente para el estilo del título (coincide con diseño anterior) -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
       /* 🔹 Banner con video de fondo */
@@ -33,22 +33,30 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
         z-index: 0;
-        pointer-events: none; /* evita que el video de fondo reciba clics */
+        pointer-events: none;
       }
       #banner-video .content {
         position: relative;
         z-index: 2;
-        background: rgba(0, 0, 0, 0.45);
+        background: rgba(20, 10, 30, 0.75);
         padding: 2em 3em;
         border-radius: 10px;
       }
       #banner-video h2 {
+        font-family: 'Orbitron', sans-serif;
         font-size: 2.2em;
+        font-weight: 800;
+        background: linear-gradient(90deg, #8a2be2, #ff69b4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
       #banner-video p {
+        font-family: 'Poppins', sans-serif;
         font-size: 1.1em;
-        color: #eee;
+        color: #f0e6ff;
       }
 
       /* 🔹 Catálogo */
@@ -72,7 +80,7 @@
       }
       .features-grid > li:hover {
         transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(138, 43, 226, 0.15);
       }
       .features-grid .image img {
         border-radius: 8px;
@@ -80,22 +88,25 @@
         height: auto;
       }
       .features-grid h4 {
+        font-family: 'Orbitron', sans-serif;
         margin-top: 0.8em;
-        color: #003049;
+        color: #8a2be2;
+        font-weight: 600;
       }
       .features-grid p {
+        font-family: 'Poppins', sans-serif;
         font-size: 0.9em;
         color: #555;
         margin-bottom: 1em;
       }
 
-      /*  Botón WhatsApp */
+      /* Botón WhatsApp - VERDE MÁS CLARITO */
       .whatsapp-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        background-color: #25D366;
+        background-color: #34c759; /* Verde más clarito */
         color: white !important;
         padding: 12px 24px;
         border-radius: 50px;
@@ -103,12 +114,13 @@
         text-decoration: none;
         font-size: 0.95em;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 10px rgba(52, 199, 89, 0.4);
+        font-family: 'Poppins', sans-serif;
       }
       .whatsapp-btn:hover {
-        background-color: #1ebe5d;
+        background-color: #30b352; /* Verde un poco más oscuro al hover */
         transform: scale(1.05);
-        box-shadow: 0 6px 14px rgba(37, 211, 102, 0.6);
+        box-shadow: 0 6px 14px rgba(52, 199, 89, 0.6);
       }
 
       .actions {
@@ -123,7 +135,7 @@
       }
       .btn-descargar {
         display: inline-block;
-        background-color: #00b894;
+        background: linear-gradient(135deg, #8a2be2, #ff69b4);
         color: #fff;
         padding: 14px 32px;
         border-radius: 8px;
@@ -131,36 +143,51 @@
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0,184,148,0.4);
+        box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+        font-family: 'Poppins', sans-serif;
       }
       .btn-descargar:hover {
-        background-color: #019874;
+        background: linear-gradient(135deg, #9932cc, #ff1493);
         transform: scale(1.05);
-        box-shadow: 0 6px 16px rgba(0,184,148,0.6);
+        box-shadow: 0 6px 16px rgba(138, 43, 226, 0.6);
       }
 
-      /* ====== Estilos del header/title (aplico el mismo diseño que en la otra página) ====== */
+      /* ====== Header con nuevos colores ====== */
       #header h1 a {
         font-family: 'Orbitron', sans-serif;
         font-weight: 800;
         font-size: 1.1rem;
-        background: linear-gradient(90deg, #4b00b5, #00b3ff);
+        background: linear-gradient(90deg, #8a2be2, #ff69b4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: 1px;
         text-transform: uppercase;
-        text-shadow: 0 0 12px rgba(0,179,255,0.10);
+        text-shadow: 0 0 12px rgba(138, 43, 226, 0.12);
       }
 
-      /* Mejora contraste del menú desplegable para legibilidad (no cambia estructura) */
+      /* Menú con nuevos colores */
       #menu {
-        background: rgba(10, 8, 20, 0.88);
+        background: rgba(20, 10, 30, 0.95);
       }
       #menu ul li a {
-        color: #e6f6ff;
+        color: #e6e6fa;
+        font-family: 'Poppins', sans-serif;
       }
       #menu ul li a:hover {
-        color: #00b3ff;
+        color: #ff69b4;
+      }
+
+      /* Títulos de secciones */
+      h3 {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(90deg, #8a2be2, #ff69b4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+      }
+
+      p {
+        font-family: 'Poppins', sans-serif;
       }
 
       @media screen and (max-width: 980px) {
@@ -187,7 +214,6 @@
         <nav id="nav">
           <ul>
             <li class="special">
-              <!-- RESTAURADO: el div#menu debe estar dentro de este li para que main.js lo maneje -->
               <a href="#menu" class="menuToggle"><span>Menu</span></a>
               <div id="menu">
                 <ul>
