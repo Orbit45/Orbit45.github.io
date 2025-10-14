@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Preload para fuentes críticas -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet"></noscript>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Estilos optimizados para móviles --- */
+        /* --- Reset y estilos base --- */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Banner/Video fullpage optimizado */
+        /* Banner/Video fullpage corregido */
         #banner {
             position: relative;
             width: 100%;
@@ -43,7 +43,7 @@
             pointer-events: none;
         }
 
-        /* Imagen de respaldo para móviles */
+        /* Imagen de respaldo para cuando falle el video */
         .video-fallback {
             display: none;
             position: absolute;
@@ -53,18 +53,11 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-        }
-
-        @media (max-width: 768px) {
-            .video-background {
-                display: none;
-            }
-            .video-fallback {
-                display: block;
-            }
+            background: linear-gradient(135deg, #1a0a2a 0%, #3a1a5a 100%);
         }
 
         #banner .inner {
+            position: relative;
             z-index: 2;
             color: #fff;
             padding: 0 20px;
@@ -73,6 +66,10 @@
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         #banner .inner.visible {
@@ -80,7 +77,7 @@
             transform: translateY(0);
         }
 
-        /* Título principal con nueva paleta de colores */
+        /* Título principal corregido - sin superposición */
         #banner .inner h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 3em;
@@ -91,25 +88,52 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(138, 43, 226, 0.15);
+            margin: 0 0 20px 0;
+            line-height: 1.2;
         }
 
-        /* Subtítulo con color suave */
+        /* Subtítulo corregido - sin superposición */
         #banner .inner p {
             font-family: 'Poppins', sans-serif;
             font-size: 1.2em;
             line-height: 1.5em;
-            margin-top: 1em;
+            margin: 1em 0;
             color: #f0e6ff;
             text-shadow: 0 0 10px rgba(138, 43, 226, 0.12);
         }
 
         #banner .actions.special {
             margin-top: 2em;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
-        #banner .more.scrolly {
-            z-index: 2;
+        /* BOTÓN MÁS INFORMACIÓN - CORREGIDO Y CENTRADO */
+        .more-info-button {
+            display: inline-block;
             margin-top: 40px;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid #8a2be2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .more-info-button:hover {
+            background: #8a2be2;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
         /* Evitar interacción con vídeos que son sólo fondo */
@@ -117,7 +141,7 @@
             pointer-events: none;
         }
 
-        /* Header con nueva paleta de colores */
+        /* Header corregido */
         #header h1 a {
             font-family: 'Orbitron', sans-serif;
             font-weight: 800;
@@ -129,6 +153,7 @@
             text-transform: uppercase;
             text-shadow: 0 0 12px rgba(138, 43, 226, 0.12);
             transition: all 0.25s ease;
+            text-decoration: none;
         }
 
         /* Header alternativo */
@@ -153,21 +178,28 @@
 
         /* Menú con nuevos colores */
         #menu {
-            background: rgba(20, 10, 30, 0.9);
+            background: rgba(20, 10, 30, 0.95);
         }
         
         #menu ul li a {
             color: #e6e6fa;
+            text-decoration: none;
         }
         
         #menu ul li a:hover {
             color: #ff69b4;
         }
 
-        /* Optimización de videos en secciones */
+        /* Optimización de videos en secciones - corregido */
+        .spotlight .video, .spotlight .image {
+            width: 100%;
+            overflow: hidden;
+        }
+        
         .spotlight video {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            display: block;
         }
 
         /* Iconos con nuevos colores */
@@ -185,16 +217,55 @@
             background-color: #1a0a2a;
         }
 
+        /* Ajustes para evitar superposición en secciones */
+        .wrapper {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .spotlight {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .spotlight .content {
+            position: relative;
+            z-index: 2;
+        }
+
         /* Media queries para optimización móvil */
         @media screen and (max-width: 1280px) {
-            #banner .inner h2 { font-size: 2.5em; }
-            #banner .inner p { font-size: 1.1em; }
+            #banner .inner h2 { 
+                font-size: 2.5em; 
+                margin-bottom: 15px;
+            }
+            #banner .inner p { 
+                font-size: 1.1em; 
+                margin: 0.8em 0;
+            }
         }
 
         @media screen and (max-width: 736px) {
-            #banner .inner h2 { font-size: 2em; }
-            #banner .inner p { font-size: 1em; }
-            #banner .more.scrolly { margin-top: 20px; }
+            #banner .inner h2 { 
+                font-size: 2em; 
+                margin-bottom: 10px;
+            }
+            #banner .inner p { 
+                font-size: 1em; 
+                margin: 0.6em 0;
+            }
+            .more-info-button { 
+                margin-top: 20px; 
+                padding: 10px 25px;
+                font-size: 0.9em;
+            }
+            
+            /* Optimización para videos en móviles */
+            .video-background {
+                /* Asegurar que el video se muestre en móviles */
+                display: block !important;
+            }
             
             /* Optimización adicional para móviles */
             .spotlight {
@@ -203,6 +274,10 @@
             
             .spotlight .content, .spotlight .image, .spotlight .video {
                 width: 100%;
+            }
+            
+            .wrapper {
+                padding: 2rem 0;
             }
         }
 
@@ -215,6 +290,31 @@
         .lazy.loaded {
             opacity: 1;
         }
+        
+        /* Fondo de respaldo para el banner en caso de que falle el video */
+        #banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0a2a 0%, #3a1a5a 100%);
+            z-index: 0;
+            display: none;
+        }
+        
+        .video-failed #banner::before {
+            display: block;
+        }
+        
+        .video-failed .video-background {
+            display: none;
+        }
+        
+        .video-failed .video-fallback {
+            display: block;
+        }
     </style>
 </head>
 
@@ -222,7 +322,7 @@
 
 <div id="page-wrapper">
 
-    <!-- Header (sin cambios) -->
+    <!-- Header -->
     <header id="header" class="alt">
         <h1><a href="index.html">Orbit Tecnologia</a></h1>
         <nav id="nav">
@@ -243,35 +343,37 @@
         </nav>
     </header>
 
-    <!-- Banner principal con video optimizado -->
+    <!-- Banner principal con video corregido -->
     <section id="banner">
-        <!-- Imagen de respaldo para móviles -->
-        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTA4MjgiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5PcmJpdCBUZWNub2xvZ2lhPC90ZXh0Pjwvc3ZnPg==" alt="Orbit Tecnologia" class="video-fallback">
+        <!-- Imagen de respaldo para cuando falle el video -->
+        <div class="video-fallback"></div>
         
-        <!-- Video optimizado con preload="none" para móviles -->
-        <video class="video-background" muted autoplay loop playsinline preload="none">
+        <!-- Video optimizado con manejo de errores -->
+        <video class="video-background" muted autoplay loop playsinline preload="auto" id="mainVideo">
             <source src="./video/14203516_3840_2160_25fps.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
         </video>
 
         <div class="inner">
             <h2>ORBIT TECNOLOGIA</h2>
-            <p>Una excelente solución tecnológica para la seguridad,
+            <p>Una excelente solución tecnológica para la seguridad,<br />
                 y optimización de sistemas.<br />
                 tu aliado en CCTV, reparaciones y más.</p>
 
             <ul class="actions special">
                 <li><a href="https://www.facebook.com/OrbitTecnologia" class="button primary">Visítanos en Facebook</a></li>
             </ul>
+            
+            <!-- BOTÓN MÁS INFORMACIÓN - AHORA PERFECTAMENTE CENTRADO -->
+            <a href="#one" class="more-info-button">Más Información</a>
         </div>
-
-        <a href="#one" class="more scrolly">Más Información</a>
     </section>
 
-    <!-- Sección ONE (sin cambios) -->
+    <!-- Sección ONE -->
     <section id="one" class="wrapper style1 special">
         <div class="inner">
             <header class="major">
-                <h2>Soluciones Integrales<br />  en Seguridad y Soporte IT</h2>
+                <h2>Soluciones Integrales<br />en Seguridad y Soporte IT</h2>
                 <p>Es su socio de confianza con más de 10 años de experiencia en tecnología.<br /> Ofrecemos Soluciones de Seguridad Electrónica (instalación de CCTV, cámaras, alarmas <br> domésticas, controles de acceso, etc),</p>
                 <p>Brindamos Soporte Informático completo (formateo, mantenimiento,<br> reparación de PC/laptops e instalación de juegos y programas). <br> Y aseguramos una conectividad óptima con servicios de Redes e Internet </p>
             </header>
@@ -332,11 +434,10 @@
                     Tu navegador no soporta el elemento de video.
                 </video>
             </div>
-
         </section>
     </section>
 
-    <!-- Sección THREE: Servicios extra (sin cambios) -->
+    <!-- Sección THREE: Servicios extra -->
     <section id="three" class="wrapper style3 special">
         <div class="inner">
             <header class="major">
@@ -372,7 +473,7 @@
         </div>
     </section>
 
-    <!-- Footer (sin cambios) -->
+    <!-- Footer -->
     <footer id="footer">
         <ul class="icons">
             <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -388,7 +489,7 @@
 
 </div>
 
-<!-- SCRIPTS (sin cambios) -->
+<!-- SCRIPTS -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -397,56 +498,69 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Scripts de optimización para móviles -->
+<!-- Scripts de optimización para móviles corregidos -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // Animación del título al cargar
     const inner = document.querySelector("#banner .inner");
     setTimeout(() => inner.classList.add("visible"), 300);
     
+    // Manejo de errores del video principal
+    const mainVideo = document.getElementById('mainVideo');
+    if (mainVideo) {
+        // Forzar la carga del video
+        mainVideo.load();
+        
+        mainVideo.addEventListener('error', function() {
+            console.log('Error cargando el video principal, usando respaldo');
+            document.body.classList.add('video-failed');
+        });
+        
+        // Verificar si el video se está reproduciendo
+        mainVideo.addEventListener('loadeddata', function() {
+            console.log('Video principal cargado correctamente');
+        });
+        
+        // Si después de 3 segundos el video no se ha cargado, usar respaldo
+        setTimeout(function() {
+            if (mainVideo.readyState < 3) { // HAVE_FUTURE_DATA
+                console.log('Video principal tardando en cargar, usando respaldo');
+                document.body.classList.add('video-failed');
+            }
+        }, 3000);
+    }
+    
     // Carga diferida de videos para mejorar rendimiento en móviles
     function lazyLoadVideos() {
         const lazyVideos = document.querySelectorAll('video.lazy');
         
-        if ('IntersectionObserver' in window) {
-            const lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(video) {
-                    if (video.isIntersecting) {
-                        for (var source in video.target.children) {
-                            var videoSource = video.target.children[source];
-                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-                                videoSource.src = videoSource.dataset.src;
+        lazyVideos.forEach(function(video) {
+            // Cargar videos cuando estén en el viewport
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        for (let source of video.children) {
+                            if (source.tagName === 'SOURCE') {
+                                // Si hay un data-src, usarlo, de lo contrario usar el src normal
+                                const dataSrc = source.getAttribute('data-src');
+                                if (dataSrc) {
+                                    source.src = dataSrc;
+                                }
                             }
                         }
-                        
-                        video.target.load();
-                        video.target.classList.add("loaded");
-                        lazyVideoObserver.unobserve(video.target);
+                        video.load();
+                        video.classList.add("loaded");
+                        observer.unobserve(video);
                     }
                 });
             });
             
-            lazyVideos.forEach(function(lazyVideo) {
-                lazyVideoObserver.observe(lazyVideo);
-            });
-        }
+            observer.observe(video);
+        });
     }
     
     // Inicializar carga diferida
     lazyLoadVideos();
-    
-    // Detectar si es móvil y optimizar videos
-    function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    }
-    
-    if (isMobileDevice()) {
-        // En móviles, usar imagen de respaldo en lugar de video principal
-        const mainVideo = document.querySelector('.video-background');
-        if (mainVideo) {
-            mainVideo.style.display = 'none';
-        }
-    }
 });
 </script>
 
