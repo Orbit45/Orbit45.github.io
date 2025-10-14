@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Fuente moderna estilo tecnología -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Preload para fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet"></noscript>
 
     <style>
-        /* --- Mantengo todos tus estilos originales y solo agrego los ajustes visuales para el header */
+        /* --- Estilos optimizados para móviles --- */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
 
-        /* Banner/Video fullpage */
+        /* Banner/Video fullpage optimizado */
         #banner {
             position: relative;
             width: 100%;
@@ -39,7 +40,28 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            pointer-events: none; /* evita clics sobre videos de fondo */
+            pointer-events: none;
+        }
+
+        /* Imagen de respaldo para móviles */
+        .video-fallback {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .video-background {
+                display: none;
+            }
+            .video-fallback {
+                display: block;
+            }
         }
 
         #banner .inner {
@@ -58,27 +80,27 @@
             transform: translateY(0);
         }
 
-        /* Título principal con diseño Orbitron y degradado */
+        /* Título principal con nueva paleta de colores */
         #banner .inner h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 3em;
             font-weight: 800;
-            background: linear-gradient(90deg, #4b00b5, #00b3ff);
+            background: linear-gradient(90deg, #8a2be2, #ff69b4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(0, 179, 255, 0.15);
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.15);
         }
 
-        /* Subtítulo con color suave similar al logo */
+        /* Subtítulo con color suave */
         #banner .inner p {
             font-family: 'Poppins', sans-serif;
             font-size: 1.2em;
             line-height: 1.5em;
             margin-top: 1em;
-            color: #cce7ff;
-            text-shadow: 0 0 10px rgba(75, 0, 181, 0.12);
+            color: #f0e6ff;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.12);
         }
 
         #banner .actions.special {
@@ -90,49 +112,80 @@
             margin-top: 40px;
         }
 
-        /* Evitar interacción con vídeos que son sólo fondo (no se amplían) */
+        /* Evitar interacción con vídeos que son sólo fondo */
         video[autoplay][loop][muted] {
             pointer-events: none;
         }
 
-        /* ===== ÚNICO CAMBIO ADICIONAL: estilo del header title (secundario) =====
-           Ahora el título pequeño en la cabecera usa el mismo diseño Orbitron / degradado.
-           Esto es exactamente lo que pediste: mismo diseño visual que el título grande.
-        */
+        /* Header con nueva paleta de colores */
         #header h1 a {
             font-family: 'Orbitron', sans-serif;
             font-weight: 800;
             font-size: 1.25rem;
-            background: linear-gradient(90deg, #4b00b5, #00b3ff);
+            background: linear-gradient(90deg, #8a2be2, #ff69b4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 12px rgba(0,179,255,0.12);
+            text-shadow: 0 0 12px rgba(138, 43, 226, 0.12);
             transition: all 0.25s ease;
         }
 
-        /* Mantener compatibilidad visual en header.alt */
+        /* Header alternativo */
         #header.alt h1 a {
             font-size: 1.35rem;
-            background: linear-gradient(90deg, #00b3ff, #6f00ff);
+            background: linear-gradient(90deg, #ff69b4, #8a2be2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 14px rgba(111,0,255,0.12);
+            text-shadow: 0 0 14px rgba(255, 105, 180, 0.12);
         }
 
-        /* No toco el resto de estilos por tu petición; dejo pequeños ajustes para legibilidad del menú */
+        /* Botones con nueva paleta */
+        .button.primary {
+            background-color: #8a2be2;
+            border-color: #8a2be2;
+        }
+        
+        .button.primary:hover {
+            background-color: #9932cc;
+            border-color: #9932cc;
+        }
+
+        /* Menú con nuevos colores */
         #menu {
-            /* ligero fondo semitransparente para legibilidad; si tu css original define otro, este no sobrescribe si es más específico */
-            background: rgba(10, 8, 20, 0.85);
+            background: rgba(20, 10, 30, 0.9);
         }
+        
         #menu ul li a {
-            color: #e6f6ff;
+            color: #e6e6fa;
         }
+        
         #menu ul li a:hover {
-            color: #00b3ff;
+            color: #ff69b4;
         }
 
+        /* Optimización de videos en secciones */
+        .spotlight video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Iconos con nuevos colores */
+        .icon.major {
+            color: #8a2be2;
+        }
+
+        /* Sección CTA con nuevos colores */
+        #cta {
+            background: linear-gradient(135deg, #8a2be2 0%, #ff69b4 100%);
+        }
+
+        /* Footer con nuevos colores */
+        #footer {
+            background-color: #1a0a2a;
+        }
+
+        /* Media queries para optimización móvil */
         @media screen and (max-width: 1280px) {
             #banner .inner h2 { font-size: 2.5em; }
             #banner .inner p { font-size: 1.1em; }
@@ -142,6 +195,25 @@
             #banner .inner h2 { font-size: 2em; }
             #banner .inner p { font-size: 1em; }
             #banner .more.scrolly { margin-top: 20px; }
+            
+            /* Optimización adicional para móviles */
+            .spotlight {
+                flex-direction: column;
+            }
+            
+            .spotlight .content, .spotlight .image, .spotlight .video {
+                width: 100%;
+            }
+        }
+
+        /* Clase para ocultar elementos hasta que se carguen */
+        .lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazy.loaded {
+            opacity: 1;
         }
     </style>
 </head>
@@ -150,7 +222,7 @@
 
 <div id="page-wrapper">
 
-    <!-- Header (mantengo EXACTAMENTE la estructura y el menú que tenías) -->
+    <!-- Header (sin cambios) -->
     <header id="header" class="alt">
         <h1><a href="index.html">Orbit Tecnologia</a></h1>
         <nav id="nav">
@@ -171,15 +243,19 @@
         </nav>
     </header>
 
-    <!-- Banner principal con video (sin cambios funcionales) -->
+    <!-- Banner principal con video optimizado -->
     <section id="banner">
-        <video class="video-background" muted autoplay loop playsinline>
+        <!-- Imagen de respaldo para móviles -->
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTA4MjgiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5PcmJpdCBUZWNub2xvZ2lhPC90ZXh0Pjwvc3ZnPg==" alt="Orbit Tecnologia" class="video-fallback">
+        
+        <!-- Video optimizado con preload="none" para móviles -->
+        <video class="video-background" muted autoplay loop playsinline preload="none">
             <source src="./video/14203516_3840_2160_25fps.mp4" type="video/mp4">
         </video>
 
         <div class="inner">
             <h2>ORBIT TECNOLOGIA</h2>
-            <p>Una excelente solución tecnológica para la seguridad,   <br />
+            <p>Una excelente solución tecnológica para la seguridad,
                 y optimización de sistemas.<br />
                 tu aliado en CCTV, reparaciones y más.</p>
 
@@ -191,7 +267,7 @@
         <a href="#one" class="more scrolly">Más Información</a>
     </section>
 
-    <!-- Sección ONE (igual que tu contenido original) -->
+    <!-- Sección ONE (sin cambios) -->
     <section id="one" class="wrapper style1 special">
         <div class="inner">
             <header class="major">
@@ -207,11 +283,12 @@
         </div>
     </section>
 
-    <!-- Sección TWO con spotlight y vídeos (mantengo exactamente tus vídeos y markup) -->
+    <!-- Sección TWO con spotlight y vídeos optimizados -->
     <section id="two" class="wrapper alt style2">
         <section class="spotlight">
             <div class="video">
-                <video width="100%" height="auto" autoplay loop muted playsinline>
+                <!-- Video optimizado con carga diferida -->
+                <video width="100%" height="auto" autoplay loop muted playsinline preload="none" class="lazy">
                     <source src="video/camara 2.mp4" type="video/mp4">
                     Tu navegador no soporta la etiqueta de video.
                 </video>
@@ -233,7 +310,8 @@
                 Trabajamos con varios presupuestos y ajustamos cada proyecto a su medida, asegurando siempre la calidad, la durabilidad y el máximo nivel de seguridad exigido por la ley. </p>
             </div>
             <div class="image">
-                <video width="100%" height="auto" autoplay loop muted playsinline>
+                <!-- Video optimizado con carga diferida -->
+                <video width="100%" height="auto" autoplay loop muted playsinline preload="none" class="lazy">
                     <source src="video/instalacion mt.mp4" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
@@ -248,7 +326,8 @@
             </div>
 
             <div class="image">
-                <video width="100%" height="auto" autoplay loop muted playsinline>
+                <!-- Video optimizado con carga diferida -->
+                <video width="100%" height="auto" autoplay loop muted playsinline preload="none" class="lazy">
                     <source src="video/huellero.mp4" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
@@ -257,7 +336,7 @@
         </section>
     </section>
 
-    <!-- Sección THREE: Servicios extra (mantengo TODO exactamente como lo tenías) -->
+    <!-- Sección THREE: Servicios extra (sin cambios) -->
     <section id="three" class="wrapper style3 special">
         <div class="inner">
             <header class="major">
@@ -293,7 +372,7 @@
         </div>
     </section>
 
-    <!-- Footer (igual que antes) -->
+    <!-- Footer (sin cambios) -->
     <footer id="footer">
         <ul class="icons">
             <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -309,7 +388,7 @@
 
 </div>
 
-<!-- SCRIPTS (mantengo exactamente los scripts que tenías para que el menú y la plantilla funcionen) -->
+<!-- SCRIPTS (sin cambios) -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -318,11 +397,56 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Animación del título al cargar (tu script original) -->
+<!-- Scripts de optimización para móviles -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    // Animación del título al cargar
     const inner = document.querySelector("#banner .inner");
     setTimeout(() => inner.classList.add("visible"), 300);
+    
+    // Carga diferida de videos para mejorar rendimiento en móviles
+    function lazyLoadVideos() {
+        const lazyVideos = document.querySelectorAll('video.lazy');
+        
+        if ('IntersectionObserver' in window) {
+            const lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(video) {
+                    if (video.isIntersecting) {
+                        for (var source in video.target.children) {
+                            var videoSource = video.target.children[source];
+                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                videoSource.src = videoSource.dataset.src;
+                            }
+                        }
+                        
+                        video.target.load();
+                        video.target.classList.add("loaded");
+                        lazyVideoObserver.unobserve(video.target);
+                    }
+                });
+            });
+            
+            lazyVideos.forEach(function(lazyVideo) {
+                lazyVideoObserver.observe(lazyVideo);
+            });
+        }
+    }
+    
+    // Inicializar carga diferida
+    lazyLoadVideos();
+    
+    // Detectar si es móvil y optimizar videos
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+    
+    if (isMobileDevice()) {
+        // En móviles, usar imagen de respaldo en lugar de video principal
+        const mainVideo = document.querySelector('.video-background');
+        if (mainVideo) {
+            mainVideo.style.display = 'none';
+        }
+    }
 });
 </script>
 
