@@ -59,6 +59,51 @@
         color: #f0e6ff;
       }
 
+      /* 🔹 Buscador */
+      .buscador-container {
+        max-width: 600px;
+        margin: 2em auto;
+        text-align: center;
+      }
+
+      .buscador-input {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.1em;
+        border: 2px solid #8a2be2;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.95);
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+      }
+
+      .buscador-input:focus {
+        border-color: #ff69b4;
+        box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .buscador-input::placeholder {
+        color: #888;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .resultado-busqueda {
+        margin-top: 1em;
+        padding: 10px;
+        background: rgba(138, 43, 226, 0.1);
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        color: #8a2be2;
+      }
+
+      .sin-resultados {
+        color: #ff69b4;
+        font-weight: 500;
+      }
+
       /* 🔹 Catálogo */
       .features-grid {
         display: flex;
@@ -194,10 +239,26 @@
         .features-grid > li {
           width: 48%;
         }
+        
+        .buscador-container {
+          margin: 1em auto;
+          padding: 0 1em;
+        }
+        
+        .buscador-input {
+          font-size: 1em;
+          padding: 12px 18px;
+        }
       }
+
       @media screen and (max-width: 736px) {
         .features-grid > li {
           width: 100%;
+        }
+        
+        .buscador-input {
+          font-size: 0.95em;
+          padding: 10px 16px;
         }
       }
     </style>
@@ -248,852 +309,902 @@
             <h3>45 Juegos Optimizados para PC y Laptop</h3>
             <p>El precio incluye la instalación profesional, optimización del sistema para el juego y soporte de compatibilidad.</p>
 
-            <ul class="features-grid">
+            <!-- 🔹 BUSCADOR -->
+            <div class="buscador-container">
+              <input type="text" id="buscador-juegos" class="buscador-input" placeholder="🔍 Buscar juego por nombre..." />
+              <div id="resultado-busqueda" class="resultado-busqueda" style="display: none;"></div>
+            </div>
 
+            <ul class="features-grid" id="lista-juegos">
 
-            <!-- CATALOGOS DE JUEGOS AGREGARDESDE QUI -->
+  <!-- JUEGO 1 -->
+  <li data-nombre="Little Nightmares 3">
+    <span class="image fit">
+      <a href="catalogo/littlenightmares 3.jpg" class="lightbox-trigger">
+        <img src="catalogo/littlenightmares 3.jpg" alt="Little Nightmares 3">
+      </a>
+    </span>
+    <h4>Little Nightmares 3</h4>
+    <p><strong>Descripción:</strong> Aventura / Terror / Puzzle<br>
+    <strong>Requisitos mínimos:</strong> Windows 11, Intel Core i5-6500 / AMD Ryzen 3 1200, 8 GB RAM, NVIDIA GeForce GTX 1060 / AMD Radeon RX 580, 20 GB espacio<br>
+    <strong>Requisitos recomendados:</strong> Windows 11, Intel Core i5-8400 / AMD Ryzen 5 1600, 12 GB RAM, NVIDIA GeForce RTX 2080 / AMD RX 6800, 20 GB espacio<br>
+    <strong>Precio: 9.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Little%20Nightmares%203" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
 
-<li>
+  <!-- JUEGO 2 -->
+  <li data-nombre="Silent Hill F">
+    <span class="image fit">
+      <a href="catalogo/silent-hill-f-1q1eg.jpg" class="lightbox-trigger">
+        <img src="catalogo/silent-hill-f-1q1eg.jpg" alt="Silent Hill F">
+      </a>
+    </span>
+    <h4>Silent Hill F</h4>
+    <p><strong>Descripción:</strong> Terror Psicológico / Survival Horror<br>
+    <strong>Requisitos mínimos:</strong> Windows 11 x64, Intel Core i5-8400 / AMD Ryzen 5 2600, 16 GB RAM, NVIDIA GeForce GTX 1070 Ti / AMD Radeon RX 5700, 50 GB espacio<br>
+    <strong>Requisitos recomendados:</strong> Windows 11 x64, Intel Core i7-9700 / AMD Ryzen 5 5500, 16 GB RAM, NVIDIA GeForce RTX 2080 / AMD Radeon RX 6800XT, 50 GB espacio<br>
+    <strong>Precio: 12.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Silent%20Hill%20F" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 3 -->
+  <li data-nombre="Silent Hill 2 Deluxe Edition">
+    <span class="image fit">
+      <a href="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" class="lightbox-trigger">
+        <img src="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" alt="Silent Hill 2 Deluxe Edition">
+      </a>
+    </span>
+    <h4>SILENT HILL 2 DELUXE EDITION</h4>
+    <p><strong>REQUISITOS MÍNIMOS:</strong><br>SO: Windows 10 x64<br>
+      Procesador: Intel Core i7-6700K | AMD Ryzen 5 3600<br>Memoria: 16 GB RAM<br>
+      Gráficos: NVIDIA GeForce GTX 1070 Ti | AMD Radeon RX 5700 | Intel Arc A750<br>
+      DirectX: Versión 12<br>Almacenamiento: 50 GB disponibles<br><br><strong>
+        REQUISITOS RECOMENDADOS:</strong><br>SO: Windows 10 x64<br>
+        Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X<br>Memoria: 16 GB RAM<br>
+        Gráficos: NVIDIA GeForce RTX 2080 | AMD Radeon 6800XT<br>DirectX: Versión 12<br>
+        Almacenamiento: 50 GB disponibles
+        <br><strong>Precio: $9.000</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Silent%20Hill%202%20Deluxe%20Edition" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 4 -->
+  <li data-nombre="Max Payne 3">
+    <span class="image fit">
+      <a href="catalogo/max3.jpg" class="lightbox-trigger">
+        <img src="catalogo/max3.jpg" alt="Max Payne 3">
+      </a>
+    </span>
+    <h4>MAX PAYNE 3</h4>
+    <p><strong>REQUISITOS MÍNIMOS:</strong><br>SO: Windows 10 64-bit<br>Procesador: Intel Dual Core 2.4 GHz o AMD Dual Core 2.6 GHz<br>Memoria: 2 GB RAM<br>Gráficos: NVIDIA 8600 GT 512MB o AMD Radeon HD 3400 512MB<br>DirectX: Versión 9.0<br>Almacenamiento: 35 GB disponibles<br><br><strong>REQUISITOS RECOMENDADOS:</strong><br>SO: Windows 10 64-bit<br>Procesador: Intel i7-3930K o AMD FX-8150<br>Memoria: 16 GB RAM<br>Gráficos: NVIDIA GeForce GTX 680 2GB o AMD Radeon HD 7970 3GB<br>DirectX: Versión 11<br>Almacenamiento: 35 GB disponibles
+    <br><strong>Precio: $7.000</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Max%20Payne%203" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 5 -->
+  <li data-nombre="GTA V Enhanced">
+    <span class="image fit">
+      <a href="catalogo/grand-theft-auto-v-1006-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/grand-theft-auto-v-1006-poster.jpg" alt="GTA V Enhanced">
+      </a>
+    </span>
+    <h4>GTA V ENHANCED (SOLO PC)</h4>
+    <p><strong>Descripción:</strong> Juego de Acción<br>
+    <strong>Requisitos mínimos:</strong> Windows 8.1/10/11 - Intel Core i7-4770 / AMD FX 9590, 8 GB RAM , NVIDIA GTX 1660, +105 GB de espacio disponible <br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel® Core™ i5-9600K | AMD Ryzen™ 5 3600 , 16 GB RAM,  NVIDIA GeForce® RTX 3060 (VRAM de 8 GB) | AMD Radeon™ RX 6600 XT (VRAM de 8 GB), +165 GB de espacio disponible <br>
+    <strong>Precio: 10.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20GTA%20V%20Enhanced" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 6 -->
+  <li data-nombre="Days Gone">
+    <span class="image fit">
+      <a href="catalogo/240px-Days-gone-universal.png" class="lightbox-trigger">
+        <img src="catalogo/240px-Days-gone-universal.png" alt="Days Gone">
+      </a>
+    </span>
+    <h4>Days Gone</h4>
+    <p><strong>Descripción:</strong> Acción / Survival Horror / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-2500K / AMD FX 6300, 8 GB RAM, NVIDIA GeForce GTX 780 (3 GB) / AMD Radeon R9 290 (4 GB), 70 GB espacio<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-4770K / AMD Ryzen 5 1500X, 16 GB RAM, NVIDIA GeForce GTX 1060 (6 GB) / AMD Radeon RX 580 (8 GB), 70 GB espacio<br>
+    <strong>Precio: 10.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Days%20Gone" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 7 -->
+  <li data-nombre="Cyberpunk 2077">
+    <span class="image fit">
+      <a href="catalogo/Cyberpunk-2077.jpg" class="lightbox-trigger">
+        <img src="catalogo/Cyberpunk-2077.jpg" alt="Cyberpunk 2077">
+      </a>
+    </span>
+    <h4>Cyberpunk 2077 (SOLO PC)</h4>
+    <p><strong>Descripción:</strong> Juego de Acción<br>
+    <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Core i7-6700 / Ryzen 5 1600, 16 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Core i7-12700 / Ryzen 7 7800X3D, 18 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Cyberpunk%202077" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 8 -->
+  <li data-nombre="The Witcher 3">
+    <span class="image fit">
+      <a href="catalogo/the-witcher-3-wild-hunt-goty-2923-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/the-witcher-3-wild-hunt-goty-2923-poster.jpg" alt="The Witcher 3">
+      </a>
+    </span>
+    <h4>The Witcher 3: Wild Hunt – Game of the Year Edition</h4>
+    <p><strong>Descripción:</strong> Juego de rol en mundo abierto con historia épica<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64 bits), Intel Core i5-2500K 3.3 GHz / AMD Phenom II X4 940, 6 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64 bits), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 6.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Witcher%203" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 9 -->
+  <li data-nombre="Resident Evil Village">
+    <span class="image fit">
+      <a href="catalogo/Resident-Evil-Village.jpg" class="lightbox-trigger">
+        <img src="catalogo/Resident-Evil-Village.jpg" alt="Resident Evil Village">
+      </a>
+    </span>
+    <h4>Resident Evil Village</h4>
+    <p><strong>Descripción:</strong> Terror y supervivencia de nueva generación<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64 bits), Intel Core i5-7500 o AMD Ryzen 3 1200, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10/11 (64 bits), Intel Core i7-8700 o AMD Ryzen 5 3600, 16 GB RAM<br>
+    <strong>Precio: 10.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%20Village" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 10 -->
+  <li data-nombre="Red Dead Redemption">
+    <span class="image fit">
+      <a href="catalogo/Red-Dead-Redemption.jpg" class="lightbox-trigger">
+        <img src="catalogo/Red-Dead-Redemption.jpg" alt="Red Dead Redemption">
+      </a>
+    </span>
+    <h4>Red Dead Redemption</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-2500K / AMD FX-6300, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-4770K / AMD Ryzen 5 1500X, 12 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Red%20Dead%20Redemption" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 11 -->
+  <li data-nombre="Max Payne">
+    <span class="image fit">
+      <a href="catalogo/max_payne-2518833.webp" class="lightbox-trigger">
+        <img src="catalogo/max_payne-2518833.webp" alt="Max Payne">
+      </a>
+    </span>
+    <h4>MAX PAYNE</h4>
+    <p><strong>REQUISITOS DEL SISTEMA:</strong><br> MINIMOS: <br> Tarjeta gráfica:
+        16 MB Direct3D Compatible Graphics Card <br> Procesador:
+        450 MHz AMD / Intel Processor <br><strong> RECOMENDADOS:</strong><br> Tarjeta gráfica:
+        32 MB Direct3D Compatible Graphics Card <br>Procesador:
+        700 MHz AMD / Intel Processor<br>Memoria:
+        128 MB RAM <br> ESPACIO DE DISCO: <br> 10 GB <br> <strong>Precio: $5.000</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Max%20Payne" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 12 -->
+  <li data-nombre="Max Payne 2">
+    <span class="image fit">
+      <a href="catalogo/Max-Payne-2-The-Fall-of-Max-Payne.jpg" class="lightbox-trigger">
+        <img src="catalogo/Max-Payne-2-The-Fall-of-Max-Payne.jpg" alt="Max Payne 2">
+      </a>
+    </span>
+    <h4>Max Payne 2 The Fall of Max-Payne</h4>
+    <p><strong>REQUISITOS DEL SISTEMA:</strong><br>
+        SO: Microsoft Windows 10/11 <br>
+        Procesador: PIII / Athlon a 1 GHz o Celeron / Duron a 1.2 GHz<br>
+        Memoria: 256 MB de RAM<br>
+        Gráficos: Tarjeta gráfica AGP con 32 MB y con soporte de Hardware T&L<br>
+        Versión de DirectX: DirectX 9.0<br>
+        Disco Duro: 1.5 GB de espacio libre <br><strong> RECOMENDADOS:</strong> <br>
+        SO: Microsoft Windows 10 / 11
+        Procesador: PIII / Athlon a 1 GHz o Celeron / Duron a 1.2 GHz
+        Memoria: 512 MB de RAM
+        Gráficos: Tarjeta gráfica AGP con 64 MB y con soporte de Hardware T&L
+        Versión de DirectX: DirectX 9.0
+        Disco Duro: 1.5 GB de espacio libre <strong>Precio: $6.000</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Max%20Payne%202" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 13 -->
+  <li data-nombre="Stray">
+    <span class="image fit">
+      <a href="catalogo/Stray.jpg" class="lightbox-trigger">
+        <img src="catalogo/Stray.jpg" alt="Stray">
+      </a>
+    </span>
+    <h4>Stray</h4>
+    <p><strong>Descripción:</strong> Aventura de exploración con un gato en mundo urbano<br>
+    <strong>Requisitos mínimos:</strong> Windows 10, Intel Core i5-2550K / AMD FX-8350, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10, Intel Core i5-8400 / AMD Ryzen 5 2600, 8 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Stray" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 14 -->
+  <li data-nombre="The Last of Us Part II">
+    <span class="image fit">
+      <a href="catalogo/The-Last-of-Us-Part-II-Remastered.jpg" class="lightbox-trigger">
+        <img src="catalogo/The-Last-of-Us-Part-II-Remastered.jpg" alt="The Last of Us Part II">
+      </a>
+    </span>
+    <h4>The Last of Us Part II Remastered</h4>
+    <p><strong>Descripción:</strong> Acción, aventura y supervivencia narrada con alta calidad gráfica<br>
+    <strong>Requisitos mínimos:</strong> Windows 10/11 (1909+), Intel Core i3-8100 / AMD Ryzen 3 1300X, 16 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10/11 (1909+), Intel Core i5-8600 / AMD Ryzen 5 3600, 16 GB RAM<br>
+    <strong>Precio: 12.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Last%20of%20Us%20Part%20II%20Remastered" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 15 -->
+  <li data-nombre="The Witcher 2">
+    <span class="image fit">
+      <a href="catalogo/the-witcher-2-assassins-of-kings-enhanced-edition-1407-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/the-witcher-2-assassins-of-kings-enhanced-edition-1407-poster.jpg" alt="The Witcher 2">
+      </a>
+    </span>
+    <h4>The Witcher 2: Assassins of Kings – Enhanced Edition</h4>
+    <p><strong>Descripción:</strong> Juego de rol con elementos visuales mejorados<br>
+    <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo 2.2 GHz o AMD dual-core 2.5 GHz, 1.5-2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows XP/Vista/7, Quad Core Intel o equivalente AMD, 3-4 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Witcher%202" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 16 -->
+  <li data-nombre="Resident Evil HD Remaster">
+    <span class="image fit">
+      <a href="catalogo/resident-evil-hd-remaster-biohazard-6690-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/resident-evil-hd-remaster-biohazard-6690-poster.jpg" alt="Resident Evil HD Remaster">
+      </a>
+    </span>
+    <h4>Resident Evil HD Remaster (Biohazard)</h4>
+    <p><strong>Descripción:</strong> Survival Horror clásico con gráficos remasterizados<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8/8.1, Intel Core 2 Duo 2.4 GHz o AMD Athlon X2 2.8 GHz, 2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8/8.1, Intel Core i7-3770 o AMD FX-9590, 4 GB RAM<br>
+    <strong>Precio: 5.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%20HD%20Remaster" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 17 -->
+  <li data-nombre="Resident Evil 5 Gold">
+    <span class="image fit">
+      <a href="catalogo/resident-evil-5-gold-edition-7125-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/resident-evil-5-gold-edition-7125-poster.jpg" alt="Resident Evil 5 Gold">
+      </a>
+    </span>
+    <h4>Resident Evil 5: Gold Edition</h4>
+    <p><strong>Descripción:</strong> Acción y supervivencia en tercera persona<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64 bits), Intel Core i5-3570 o AMD FX-8350, 4 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64 bits), Intel Core i7-3770 o AMD FX-9590, 8 GB RAM<br>
+    <strong>Precio: 6.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%205%20Gold%20Edition" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 18 -->
+  <li data-nombre="Resident Evil 2 Remake">
+    <span class="image fit">
+      <a href="catalogo/resident-evil-2-2019-deluxe-edition-9167-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/resident-evil-2-2019-deluxe-edition-9167-poster.jpg" alt="Resident Evil 2 Remake">
+      </a>
+    </span>
+    <h4>Resident Evil 2 Remake</h4>
+    <p><strong>Descripción:</strong> Terror / Supervivencia<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-4460 / AMD FX-6300, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-3770 / AMD FX-9590, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%202%20Remake" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 19 -->
+  <li data-nombre="Resident Evil 3 Remake">
+    <span class="image fit">
+      <a href="catalogo/Resident-Evil-3-2020-Deluxe-Edition.jpg" class="lightbox-trigger">
+        <img src="catalogo/Resident-Evil-3-2020-Deluxe-Edition.jpg" alt="Resident Evil 3 Remake">
+      </a>
+    </span>
+    <h4>Resident Evil 3 Remake</h4>
+    <p><strong>Descripción:</strong> Terror / Supervivencia<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-4460 / AMD FX-6300, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-3770 / AMD FX-9590, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%203%20Remake" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 20 -->
+  <li data-nombre="Resident Evil 4 Ultimate HD">
+    <span class="image fit">
+      <a href="catalogo/resident-evil-4-ultimate-hd-edition-elamigos-7122-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/resident-evil-4-ultimate-hd-edition-elamigos-7122-poster.jpg" alt="Resident Evil 4 Ultimate HD">
+      </a>
+    </span>
+    <h4>Resident Evil 4 Ultimate HD Edition</h4>
+    <p><strong>Descripción:</strong> Acción / Terror<br>
+    <strong>Requisitos mínimos:</strong> Windows 7 64-bit, Intel Core 2 Duo 2.4GHz / AMD Athlon X2 2.8GHz, 2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8/10 64-bit, Intel Core 2 Quad 2.7GHz / AMD Phenom II X4 3.0GHz, 4 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%204%20Ultimate%20HD%20Edition" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 21 -->
+  <li data-nombre="Need for Speed The Run">
+    <span class="image fit">
+      <a href="catalogo/need-for-speed-the-run-limited-edition-2109-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/need-for-speed-the-run-limited-edition-2109-poster.jpg" alt="Need for Speed The Run">
+      </a>
+    </span>
+    <h4>Need for Speed: The Run</h4>
+    <p><strong>Descripción:</strong> Carreras / Acción<br>
+    <strong>Requisitos mínimos:</strong> Windows 7 64-bit, Intel Core 2 Duo 3.0GHz / AMD Athlon X2 3.0GHz, 3 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8/10 64-bit, Intel Core i5 750 / AMD Phenom II X4 965, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20The%20Run" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 22 -->
+  <li data-nombre="Halo 2 Anniversary">
+    <span class="image fit">
+      <a href="catalogo/MV5BZjFjZDQyZjUtY2NhOC00NTQ2LWIwMmMtNGJkZjg3ODU5OGU1XkEyXkFqcGc@._V1_.jpg" class="lightbox-trigger">
+        <img src="catalogo/MV5BZjFjZDQyZjUtY2NhOC00NTQ2LWIwMmMtNGJkZjg3ODU5OGU1XkEyXkFqcGc@._V1_.jpg" alt="Halo 2 Anniversary">
+      </a>
+    </span>
+    <h4>Halo 2: Anniversary</h4>
+    <p><strong>Descripción:</strong> Shooter / Ciencia Ficción (HALO 1,2,3,REACH,ODST,HALO4,) PACK COMPLETO <br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-4160 / AMD FX-6350, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-4770K / AMD FX-8370, 16 GB RAM<br>
+    <strong>Precio: 15.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Halo%202%20Anniversary" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 23 -->
+  <li data-nombre="Metro Redux">
+    <span class="image fit">
+      <a href="catalogo/metro-redux-bundle-9204-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/metro-redux-bundle-9204-poster.jpg" alt="Metro Redux">
+      </a>
+    </span>
+    <h4>Metro Redux</h4>
+    <p><strong>Descripción:</strong> Shooter / Supervivencia / Terror<br>
+    <strong>Requisitos mínimos:</strong> Windows Vista/7/8 (64-bit), Intel Core 2 Duo / AMD equivalente 2.2 GHz, 2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows Vista/7/8 (64-bit), Intel Core i5 / AMD A8 3.0 GHz, 4 GB RAM<br>
+    <strong>Precio: 9.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Metro%20Redux" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 24 -->
+  <li data-nombre="Marvel Spider Man 2">
+    <span class="image fit">
+      <a href="catalogo/Marvels-Spider-Man-2-Deluxe-Edition.jpg" class="lightbox-trigger">
+        <img src="catalogo/Marvels-Spider-Man-2-Deluxe-Edition.jpg" alt="Marvel Spider Man 2">
+      </a>
+    </span>
+    <h4>Marvel's Spider-Man 2</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Superhéroes<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-8600K / AMD Ryzen 5 2600X, 16 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i5-11600K / AMD Ryzen 5 3600X, 16 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Marvel%20Spider%20Man%202" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 25 -->
+  <li data-nombre="Need for Speed Most Wanted">
+    <span class="image fit">
+      <a href="catalogo/need-for-speed-most-wanted-2012-3654-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/need-for-speed-most-wanted-2012-3654-poster.jpg" alt="Need for Speed Most Wanted">
+      </a>
+    </span>
+    <h4>Need for Speed: Most Wanted (2012)</h4>
+    <p><strong>Descripción:</strong> Carreras / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows Vista/7/8, Intel Core 2 Duo 2.4 GHz / AMD Athlon X2 2.7 GHz, 2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8 (64-bit), Intel Core 2 Quad / AMD Phenom II X4, 4 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20Most%20Wanted%202012" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 26 -->
+  <li data-nombre="Need for Speed Shift">
+    <span class="image fit">
+      <a href="catalogo/need-for-speed-shift-2117-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/need-for-speed-shift-2117-poster.jpg" alt="Need for Speed Shift">
+      </a>
+    </span>
+    <h4>Need for Speed: Shift</h4>
+    <p><strong>Descripción:</strong> Carreras / Simulación<br>
+    <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo 1.6 GHz, 1-2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows Vista/7, Intel Core 2 Duo 2.5 GHz, 2-3 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20Shift" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 27 -->
+  <li data-nombre="Assassin's Creed Origins">
+    <span class="image fit">
+      <a href="catalogo/LWQQQaPNl7m4w4IIviyKgmLA4u7jOCkW.png" class="lightbox-trigger">
+        <img src="catalogo/LWQQQaPNl7m4w4IIviyKgmLA4u7jOCkW.png" alt="Assassin's Creed Origins">
+      </a>
+    </span>
+    <h4>Assassin's Creed Origins</h4>
+    <p><strong>Descripción:</strong> Acción / RPG / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-2400s / AMD FX-6350, 6 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Origins" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 28 -->
+  <li data-nombre="Assassin's Creed Unity">
+    <span class="image fit">
+      <a href="catalogo/assassins-creed-unity-gold-edition-6626-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/assassins-creed-unity-gold-edition-6626-poster.jpg" alt="Assassin's Creed Unity">
+      </a>
+    </span>
+    <h4>Assassin's Creed Unity</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i5-2500K / AMD FX-8350, 6 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Unity" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 29 -->
+  <li data-nombre="Assassin's Creed Rogue">
+    <span class="image fit">
+      <a href="catalogo/assassins-creed-rogue-6612-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/assassins-creed-rogue-6612-poster.jpg" alt="Assassin's Creed Rogue">
+      </a>
+    </span>
+    <h4>Assassin's Creed Rogue</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 7 SP1/8/8.1 (64-bit), Intel Core 2 Quad Q6600 / AMD Athlon II X4 620, 2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7 SP1/8/8.1 (64-bit), Intel Core i5 2400s / AMD FX-6350, 4 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Rogue" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 30 -->
+  <li data-nombre="Assassin's Creed Valhalla">
+    <span class="image fit">
+      <a href="catalogo/Assassins-Creed-Valhalla.jpg" class="lightbox-trigger">
+        <img src="catalogo/Assassins-Creed-Valhalla.jpg" alt="Assassin's Creed Valhalla">
+      </a>
+    </span>
+    <h4>Assassin's Creed Valhalla</h4>
+    <p><strong>Descripción:</strong> RPG / Acción / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-4460 / AMD Ryzen 3 1200, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-4790 / AMD Ryzen 5 1600, 8 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Valhalla" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 31 -->
+  <li data-nombre="Assassin's Creed Syndicate">
+    <span class="image fit">
+      <a href="catalogo/assassins-creed-syndicate-gold-edition-6642-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/assassins-creed-syndicate-gold-edition-6642-poster.jpg" alt="Assassin's Creed Syndicate">
+      </a>
+    </span>
+    <h4>Assassin's Creed Syndicate</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i5-2400S / AMD FX-6350, 6 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 8.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Syndicate" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 32 -->
+  <li data-nombre="Assassin's Creed Revelations">
+    <span class="image fit">
+      <a href="catalogo/assassins-creed-revelations-gold-edition-6597-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/assassins-creed-revelations-gold-edition-6597-poster.jpg" alt="Assassin's Creed Revelations">
+      </a>
+    </span>
+    <h4>Assassin's Creed: Revelations</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Histórico<br>
+    <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo E4400 / AMD Athlon 64 X2 4000+, 1.5-2 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows Vista/7, Intel Core 2 Duo E6700 / AMD Athlon II X4 620, 4 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Revelations" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 33 -->
+  <li data-nombre="Mafia Edición Definitiva">
+    <span class="image fit">
+      <a href="catalogo/Mafia-Edicion-Definitiva.jpg" class="lightbox-trigger">
+        <img src="catalogo/Mafia-Edicion-Definitiva.jpg" alt="Mafia Edición Definitiva">
+      </a>
+    </span>
+    <h4>Mafia: Edición Definitiva</h4>
+    <p><strong>Descripción:</strong> Acción / Mundo Abierto / Crimen<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core-i5 2550K / AMD FX-8120, 6 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core-i7 3770 / AMD FX-8350, 16 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Mafia%20Edicion%20Definitiva" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 34 -->
+  <li data-nombre="FIFA 19">
+    <span class="image fit">
+      <a href="catalogo/fifa-19-8555-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/fifa-19-8555-poster.jpg" alt="FIFA 19">
+      </a>
+    </span>
+    <h4>FIFA 19</h4>
+    <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-6300 / AMD Athlon X4 870K, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2019" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 35 -->
+  <li data-nombre="FIFA 18">
+    <span class="image fit">
+      <a href="catalogo/fifa-18-1611-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/fifa-18-1611-poster.jpg" alt="FIFA 18">
+      </a>
+    </span>
+    <h4>FIFA 18</h4>
+    <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-3550 / AMD FX 8150, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2018" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 36 -->
+  <li data-nombre="FIFA 17">
+    <span class="image fit">
+      <a href="catalogo/fifa-17-super-deluxe-edition-972-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/fifa-17-super-deluxe-edition-972-poster.jpg" alt="FIFA 17">
+      </a>
+    </span>
+    <h4>FIFA 17</h4>
+    <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-3550 / AMD FX 8150, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2017" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 37 -->
+  <li data-nombre="FIFA 15">
+    <span class="image fit">
+      <a href="catalogo/fifa-15-ultimate-team-edition-505-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/fifa-15-ultimate-team-edition-505-poster.jpg" alt="FIFA 15">
+      </a>
+    </span>
+    <h4>FIFA 15</h4>
+    <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
+    <strong>Requisitos mínimos:</strong> Windows Vista/7/8/8.1 (64-bit), Intel Q6600 Core 2 Quad / AMD Phenom 7950, 4 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows Vista/7/8/8.1 (64-bit), Intel i5-2550K / AMD FX-6300, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2015" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 38 -->
+  <li data-nombre="Gears 5">
+    <span class="image fit">
+      <a href="catalogo/gears_of_war_5-4889120.jpg" class="lightbox-trigger">
+        <img src="catalogo/gears_of_war_5-4889120.jpg" alt="Gears 5">
+      </a>
+    </span>
+    <h4>Gears 5</h4>
+    <p><strong>Descripción:</strong> Shooter / Acción / Ciencia Ficción<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), AMD FX-6000 series / Intel i3 Skylake, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), AMD Ryzen 5 / Intel i5 Kaby Lake, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Gears%205" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 39 -->
+  <li data-nombre="Gears of War 4">
+    <span class="image fit">
+      <a href="catalogo/gears-of-war-4-3230-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/gears-of-war-4-3230-poster.jpg" alt="Gears of War 4">
+      </a>
+    </span>
+    <h4>Gears of War 4</h4>
+    <p><strong>Descripción:</strong> Shooter / Acción / Ciencia Ficción<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (1607+) (64-bit), Intel Core i5-3470 / AMD FX-6300, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (1607+) (64-bit), Intel Core i5-4690 / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Gears%20of%20War%204" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 40 -->
+  <li data-nombre="Half Life 2">
+    <span class="image fit">
+      <a href="catalogo/half_life_2-2504211.jpg" class="lightbox-trigger">
+        <img src="catalogo/half_life_2-2504211.jpg" alt="Half Life 2">
+      </a>
+    </span>
+    <h4>Half-Life 2</h4>
+    <p><strong>Descripción:</strong> Shooter / Ciencia Ficción<br>
+    <strong>Requisitos mínimos:</strong> Windows 2000/XP/Vista/7, 1.7 GHz o superior, 512 MB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows XP/Vista/7, Intel Pentium 4 3.0 GHz o superior, 1 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Half%20Life%202" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 41 -->
+  <li data-nombre="Far Cry Primal">
+    <span class="image fit">
+      <a href="catalogo/far-cry-primal-apex-edition-2932-poster.jpg" class="lightbox-trigger">
+        <img src="catalogo/far-cry-primal-apex-edition-2932-poster.jpg" alt="Far Cry Primal">
+      </a>
+    </span>
+    <h4>Far Cry Primal</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-550 / AMD Phenom II X4 955, 4 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i7-2600K / AMD FX-8350, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Far%20Cry%20Primal" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 42 -->
+  <li data-nombre="PES 21 Efootball">
+    <span class="image fit">
+      <a href="catalogo/eFootball-PES-2021.jpg" class="lightbox-trigger">
+        <img src="catalogo/eFootball-PES-2021.jpg" alt="PES 21 Efootball">
+      </a>
+    </span>
+    <h4>PES 21 Efootball (SOLO PC)</h4>
+    <p><strong>Descripción:</strong> Juego de futbol para PC<br>
+    <strong>Requisitos mínimos:</strong> Windows 8.1/10/11 - 64bit, Intel Core i5-3470 / AMD FX 4350, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-3770 / AMD FX 8350, 8 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20PES%2021%20Efootball" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 43 -->
+  <li data-nombre="Dragon Ball Sparking ZERO">
+    <span class="image fit">
+      <a href="catalogo/DRAGON-BALL-Sparking-ZERO.jpg" class="lightbox-trigger">
+        <img src="catalogo/DRAGON-BALL-Sparking-ZERO.jpg" alt="Dragon Ball Sparking ZERO">
+      </a>
+    </span>
+    <h4>DRAGON BALL Sparking ZERO</h4>
+    <p><strong>Descripción:</strong> Juego de Peleas<br>
+    <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Intel Core i5-9600K / AMD Ryzen 5 2600, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Intel Core i7-9700K / AMD Ryzen 5 3600, 16 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20DRAGON%20BALL%20Sparking%20ZERO" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 44 -->
+  <li data-nombre="Forza Horizon 5">
+    <span class="image fit">
+      <a href="catalogo/Forza-Horizon-5-Premium-Edition.jpg" class="lightbox-trigger">
+        <img src="catalogo/Forza-Horizon-5-Premium-Edition.jpg" alt="Forza Horizon 5">
+      </a>
+    </span>
+    <h4>Forza Horizon 5</h4>
+    <p><strong>Descripción:</strong> Juego de Carreras<br>
+    <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Intel i5-4460 o AMD Ryzen 3 1200, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Intel i5-8400 or AMD Ryzen 5 1500X, 16 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Forza%20Horizon%205" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+
+  <!-- JUEGO 45 -->
+  <li data-nombre="GTA The Trilogy">
+    <span class="image fit">
+      <a href="catalogo/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition.jpg" class="lightbox-trigger">
+        <img src="catalogo/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition.jpg" alt="GTA The Trilogy">
+      </a>
+    </span>
+    <h4>Grand Theft Auto: The Trilogy - The Definitive Edition</h4>
+    <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
+    <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i7-2700K / AMD FX-8350, 8 GB RAM<br>
+    <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-6600K / AMD Ryzen 5 2600, 16 GB RAM<br>
+    <strong>Precio: 7.000 Col</strong></p>
+    <div class="actions">
+      <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20GTA%20The%20Trilogy%20Definitive%20Edition" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+      </a>
+    </div>
+  </li>
+<li data-nombre="Minecraft Java Edition">
   <span class="image fit">
-    <a href="catalogo/littlenightmares 3.jpg" class="lightbox-trigger">
-      <img src="catalogo/littlenightmares 3.jpg" alt="Little Nightmares 3">
+    <a href="catalogo/minecraft.jpg" class="lightbox-trigger">
+      <img src="catalogo/minecraft.jpg" alt="Minecraft Java Edition">
     </a>
   </span>
-  <h4>Little Nightmares 3</h4>
-  <p><strong>Descripción:</strong> Aventura / Terror / Puzzle<br>
-  <strong>Requisitos mínimos:</strong> Windows 11, Intel Core i5-6500 / AMD Ryzen 3 1200, 8 GB RAM, NVIDIA GeForce GTX 1060 / AMD Radeon RX 580, 20 GB espacio<br>
-  <strong>Requisitos recomendados:</strong> Windows 11, Intel Core i5-8400 / AMD Ryzen 5 1600, 12 GB RAM, NVIDIA GeForce RTX 2080 / AMD RX 6800, 20 GB espacio<br>
-  <strong>Precio: 9.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Little%20Nightmares%203" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-
-
-             <li>
-  <span class="image fit">
-    <a href="catalogo/silent-hill-f-1q1eg.jpg" class="lightbox-trigger">
-      <img src="catalogo/silent-hill-f-1q1eg.jpg" alt="Silent Hill F">
-    </a>
-  </span>
-  <h4>Silent Hill F</h4>
-  <p><strong>Descripción:</strong> Terror Psicológico / Survival Horror<br>
-  <strong>Requisitos mínimos:</strong> Windows 11 x64, Intel Core i5-8400 / AMD Ryzen 5 2600, 16 GB RAM, NVIDIA GeForce GTX 1070 Ti / AMD Radeon RX 5700, 50 GB espacio<br>
-  <strong>Requisitos recomendados:</strong> Windows 11 x64, Intel Core i7-9700 / AMD Ryzen 5 5500, 16 GB RAM, NVIDIA GeForce RTX 2080 / AMD Radeon RX 6800XT, 50 GB espacio<br>
-  <strong>Precio: 12.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Silent%20Hill%20F" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-            </li>
-
-              <!-- 🎮 Juego 3 -->
-              <li>
-                <span class="image fit">
-                  
-                  <a href="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" class="lightbox-trigger">
-                    <img src="catalogo/Silent-Hill-2-Remake-Deluxe-Edition.jpg" alt="Carátula del Juego 3">
-                  </a>
-                </span>
-                <h4>SILENT HILL 2 DELUXE EDITION</h4>
-                <p> <strong>REQUISITOS MÍNIMOS:</strong><br>SO: Windows 10 x64<br>
-                  Procesador: Intel Core i7-6700K | AMD Ryzen 5 3600<br>Memoria: 16 GB RAM<br>
-                  Gráficos: NVIDIA GeForce GTX 1070 Ti | AMD Radeon RX 5700 | Intel Arc A750<br>
-                  DirectX: Versión 12<br>Almacenamiento: 50 GB disponibles<br><br><strong>
-                    REQUISITOS RECOMENDADOS:</strong><br>SO: Windows 10 x64<br>
-                    Procesador: Intel Core i7-8700K | AMD Ryzen 5 3600X<br>Memoria: 16 GB RAM<br>
-                    Gráficos: NVIDIA GeForce RTX 2080 | AMD Radeon 6800XT<br>DirectX: Versión 12<br>
-                    Almacenamiento: 50 GB disponibles
-                    <br><strong>Precio: $9.000</strong></p>
-                <div class="actions">
-                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%203" target="_blank" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-                  </a>
-                </div>
-              </li>
-
-              <li>
-                <span class="image fit">
-                  <!-- Aseguré que el href apunte al mismo archivo que la imagen que pusiste -->
-                  <a href="catalogo/max3.jpg" class="lightbox-trigger">
-                    <img src="catalogo/max3.jpg" alt="Carátula del Juego 3">
-                  </a>
-                </span>
-                <h4>MAX PAYNE 3</h4>
-                <p> <strong>REQUISITOS MÍNIMOS:</strong><br>SO: Windows 10 64-bit<br>Procesador: Intel Dual Core 2.4 GHz o AMD Dual Core 2.6 GHz<br>Memoria: 2 GB RAM<br>Gráficos: NVIDIA 8600 GT 512MB o AMD Radeon HD 3400 512MB<br>DirectX: Versión 9.0<br>Almacenamiento: 35 GB disponibles<br><br><strong>REQUISITOS RECOMENDADOS:</strong><br>SO: Windows 10 64-bit<br>Procesador: Intel i7-3930K o AMD FX-8150<br>Memoria: 16 GB RAM<br>Gráficos: NVIDIA GeForce GTX 680 2GB o AMD Radeon HD 7970 3GB<br>DirectX: Versión 11<br>Almacenamiento: 35 GB disponibles
-                <br><strong>Precio: $7.000</strong></p>
-                <div class="actions">
-                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%203" target="_blank" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-                  </a>
-                </div>
-              </li>
-
-              <li>
-  <span class="image fit">
-    <a href="catalogo/grand-theft-auto-v-1006-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/grand-theft-auto-v-1006-poster.jpg" alt="GTA V">
-    </a>
-  </span>
-  <h4>GTA V ENHANCED (SOLO PC)</h4>
-  <p><strong>Descripción:</strong> Juego de Acción<br>
-  <strong>Requisitos mínimos:</strong> Windows 8.1/10/11 - Intel Core i7-4770 / AMD FX 9590, 8 GB RAM , NVIDIA GTX 1660, +105 GB de espacio disponible <br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel® Core™ i5-9600K | AMD Ryzen™ 5 3600 , 16 GB RAM,  NVIDIA GeForce® RTX 3060 (VRAM de 8 GB) | AMD Radeon™ RX 6600 XT (VRAM de 8 GB), +165 GB de espacio disponible <br>
-  <strong>Precio: 10.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20GTA%20V" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/240px-Days-gone-universal.png" class="lightbox-trigger">
-      <img src="catalogo/240px-Days-gone-universal.png" alt="Days Gone">
-    </a>
-  </span>
-  <h4>Days Gone</h4>
-  <p><strong>Descripción:</strong> Acción / Survival Horror / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-2500K / AMD FX 6300, 8 GB RAM, NVIDIA GeForce GTX 780 (3 GB) / AMD Radeon R9 290 (4 GB), 70 GB espacio<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-4770K / AMD Ryzen 5 1500X, 16 GB RAM, NVIDIA GeForce GTX 1060 (6 GB) / AMD Radeon RX 580 (8 GB), 70 GB espacio<br>
-  <strong>Precio: 10.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Days%20Gone" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-
-              <li>
-  <span class="image fit">
-    <a href="catalogo/eFootball-PES-2021.jpg" class="lightbox-trigger">
-      <img src="catalogo/eFootball-PES-2021.jpg" alt="PES 21 Efootball">
-    </a>
-  </span>
-  <h4>PES 21 Efootball (SOLO PC)</h4>
-  <p><strong>Descripción:</strong> Juego de futbol para PC<br>
-  <strong>Requisitos mínimos:</strong> Windows 8.1/10/11 - 64bit, Intel Core i5-3470 / AMD FX 4350, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-3770 / AMD FX 8350, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20PES%2021%20Efootball" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Cyberpunk-2077.jpg" class="lightbox-trigger">
-      <img src="catalogo/Cyberpunk-2077.jpg" alt="Cyberpunk 2077">
-    </a>
-  </span>
-  <h4>Cyberpunk 2077 (SOLO PC)</h4>
-  <p><strong>Descripción:</strong> Juego de Acción<br>
-  <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Core i7-6700 / Ryzen 5 1600, 16 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Core i7-12700 / Ryzen 7 7800X3D, 18 GB RAM<br>
+  <h4>Minecraft Java Edition</h4>
+  <p><strong>Descripción:</strong> Sandbox / Supervivencia / Aventura<br>
+  <strong>Requisitos mínimos:</strong> Windows 7/10/11, Intel Core i3-3210 / AMD A8-7600 APU, 4 GB RAM, GPU: Intel HD Graphics 4000 / AMD Radeon R5 series, 2 GB espacio<br>
+  <strong>Requisitos recomendados:</strong> Windows 10/11, Intel Core i5-4690 / AMD A10-7800, 8 GB RAM, GPU: GeForce 700 Series / AMD Radeon Rx 200 Series, 4 GB espacio<br>
   <strong>Precio: 8.000 Col</strong></p>
   <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Cyberpunk%202077" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/DRAGON-BALL-Sparking-ZERO.jpg" class="lightbox-trigger">
-      <img src="catalogo/DRAGON-BALL-Sparking-ZERO.jpg" alt="DRAGON BALL Sparking ZERO">
-    </a>
-  </span>
-  <h4>DRAGON BALL Sparking ZERO</h4>
-  <p><strong>Descripción:</strong> Juego de Peleas<br>
-  <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Intel Core i5-9600K / AMD Ryzen 5 2600, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Intel Core i7-9700K / AMD Ryzen 5 3600, 16 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20DRAGON%20BALL%20Sparking%20ZERO" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Forza-Horizon-5-Premium-Edition.jpg" class="lightbox-trigger">
-      <img src="catalogo/Forza-Horizon-5-Premium-Edition.jpg" alt="Forza Horizon 5">
-    </a>
-  </span>
-  <h4>Forza Horizon 5</h4>
-  <p><strong>Descripción:</strong> Juego de Carreras<br>
-  <strong>Requisitos mínimos:</strong> Windows 10/11 - 64bit, Intel i5-4460 o AMD Ryzen 3 1200, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10/11 (64-bit), Intel i5-8400 or AMD Ryzen 5 1500X, 16 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Forza%20Horizon%205" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition.jpg" class="lightbox-trigger">
-      <img src="catalogo/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition.jpg" alt="GTA The Trilogy">
-    </a>
-  </span>
-  <h4>Grand Theft Auto: The Trilogy - The Definitive Edition</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i7-2700K / AMD FX-8350, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-6600K / AMD Ryzen 5 2600, 16 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20GTA%20The%20Trilogy%20Definitive%20Edition" target="_blank" class="whatsapp-btn">
+    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Minecraft%20Java%20Edition" target="_blank" class="whatsapp-btn">
       <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
     </a>
   </div>
 </li>
 
 
-
- <!-- 🎮 Juego 1 -->
-              <li>
-                <span class="image fit">
-                  <!-- href coincide con la imagen y tiene la clase de lightbox -->
-                  <a href="catalogo/max_payne-2518833.webp" class="lightbox-trigger">
-                    <img src="catalogo/max_payne-2518833.webp" alt="Carátula del Juego 1">
-                  </a>
-                </span>
-                <h4>MAX PAYNE</h4>
-                <p><strong>REQUISITOS DEL SISTEMA:</strong><br> MINIMOS: <br> Tarjeta gráfica:
-                    16 MB Direct3D Compatible Graphics Card <br> Procesador:
-                    450 MHz AMD / Intel Processor <br><strong> RECOMENDADOS:</strong><br> Tarjeta gráfica:
-                    32 MB Direct3D Compatible Graphics Card <br>Procesador:
-                    700 MHz AMD / Intel Processor<br>Memoria:
-                    128 MB RAM <br> ESPACIO DE DISCO: <br> 10 GB <br> <strong>Precio: $5.000</strong></p>
-                <div class="actions">
-                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%201" target="_blank" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-                  </a>
-                </div>
-              </li>
-
-              <!-- 🎮 Juego 2 -->
-              <li>
-                <span class="image fit">
-                  <a href="catalogo/Max-Payne-2-The-Fall-of-Max-Payne.jpg" class="lightbox-trigger">
-                    <img src="catalogo/Max-Payne-2-The-Fall-of-Max-Payne.jpg" alt="Carátula del Juego 2">
-                  </a>
-                </span>
-                <h4>Max Payne 2 The Fall of Max-Payne</h4>
-                <p><strong>REQUISITOS DEL SISTEMA:</strong><br>
-                    SO: Microsoft Windows 10/11 <br>
-                    Procesador: PIII / Athlon a 1 GHz o Celeron / Duron a 1.2 GHz<br>
-                    Memoria: 256 MB de RAM<br>
-                    Gráficos: Tarjeta gráfica AGP con 32 MB y con soporte de Hardware T&L<br>
-                    Versión de DirectX: DirectX 9.0<br>
-                    Disco Duro: 1.5 GB de espacio libre <br><strong> RECOMENDADOS:</strong> <br>
-
-                    SO: Microsoft Windows 10 / 11
-                    Procesador: PIII / Athlon a 1 GHz o Celeron / Duron a 1.2 GHz
-                    Memoria: 512 MB de RAM
-                    Gráficos: Tarjeta gráfica AGP con 64 MB y con soporte de Hardware T&L
-                    Versión de DirectX: DirectX 9.0
-                    Disco Duro: 1.5 GB de espacio libre <strong>Precio: $6.000</strong></p>
-                <div class="actions">
-                  <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20el%20Juego%202" target="_blank" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-                  </a>
-                </div>
-              </li>
-
-              <li>
-  <span class="image fit">
-    <a href="catalogo/the-witcher-3-wild-hunt-goty-2923-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/the-witcher-3-wild-hunt-goty-2923-poster.jpg" alt="The Witcher 3">
-    </a>
-  </span>
-  <h4>The Witcher 3: Wild Hunt – Game of the Year Edition</h4>
-  <p><strong>Descripción:</strong> Juego de rol en mundo abierto con historia épica<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64 bits), Intel Core i5-2500K 3.3 GHz / AMD Phenom II X4 940, 6 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64 bits), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 6.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Witcher%203" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Stray.jpg" class="lightbox-trigger">
-      <img src="catalogo/Stray.jpg" alt="Stray">
-    </a>
-  </span>
-  <h4>Stray</h4>
-  <p><strong>Descripción:</strong> Aventura de exploración con un gato en mundo urbano<br>
-  <strong>Requisitos mínimos:</strong> Windows 10, Intel Core i5-2550K / AMD FX-8350, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10, Intel Core i5-8400 / AMD Ryzen 5 2600, 8 GB RAM<br>
-  <strong>Precio: 8.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Stray" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/The-Last-of-Us-Part-II-Remastered.jpg" class="lightbox-trigger">
-      <img src="catalogo/The-Last-of-Us-Part-II-Remastered.jpg" alt="The Last of Us Part II Remastered">
-    </a>
-  </span>
-  <h4>The Last of Us Part II Remastered</h4>
-  <p><strong>Descripción:</strong> Acción, aventura y supervivencia narrada con alta calidad gráfica<br>
-  <strong>Requisitos mínimos:</strong> Windows 10/11 (1909+), Intel Core i3-8100 / AMD Ryzen 3 1300X, 16 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10/11 (1909+), Intel Core i5-8600 / AMD Ryzen 5 3600, 16 GB RAM<br>
-  <strong>Precio: 12.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Last%20of%20Us%20Part%20II%20Remastered" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/the-witcher-2-assassins-of-kings-enhanced-edition-1407-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/the-witcher-2-assassins-of-kings-enhanced-edition-1407-poster.jpg" alt="The Witcher 2">
-    </a>
-  </span>
-  <h4>The Witcher 2: Assassins of Kings – Enhanced Edition</h4>
-  <p><strong>Descripción:</strong> Juego de rol con elementos visuales mejorados<br>
-  <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo 2.2 GHz o AMD dual-core 2.5 GHz, 1.5-2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows XP/Vista/7, Quad Core Intel o equivalente AMD, 3-4 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20The%20Witcher%202" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Resident-Evil-Village.jpg" class="lightbox-trigger">
-      <img src="catalogo/Resident-Evil-Village.jpg" alt="Resident Evil Village">
-    </a>
-  </span>
-  <h4>Resident Evil Village</h4>
-  <p><strong>Descripción:</strong> Terror y supervivencia de nueva generación<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64 bits), Intel Core i5-7500 o AMD Ryzen 3 1200, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10/11 (64 bits), Intel Core i7-8700 o AMD Ryzen 5 3600, 16 GB RAM<br>
-  <strong>Precio: 10.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%20Village" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/resident-evil-hd-remaster-biohazard-6690-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/resident-evil-hd-remaster-biohazard-6690-poster.jpg" alt="Resident Evil HD Remaster">
-    </a>
-  </span>
-  <h4>Resident Evil HD Remaster (Biohazard)</h4>
-  <p><strong>Descripción:</strong> Survival Horror clásico con gráficos remasterizados<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8/8.1, Intel Core 2 Duo 2.4 GHz o AMD Athlon X2 2.8 GHz, 2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8/8.1, Intel Core i7-3770 o AMD FX-9590, 4 GB RAM<br>
-  <strong>Precio: 5.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%20HD%20Remaster" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/resident-evil-5-gold-edition-7125-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/resident-evil-5-gold-edition-7125-poster.jpg" alt="Resident Evil 5 Gold Edition">
-    </a>
-  </span>
-  <h4>Resident Evil 5: Gold Edition</h4>
-  <p><strong>Descripción:</strong> Acción y supervivencia en tercera persona<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64 bits), Intel Core i5-3570 o AMD FX-8350, 4 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64 bits), Intel Core i7-3770 o AMD FX-9590, 8 GB RAM<br>
-  <strong>Precio: 6.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%205%20Gold%20Edition" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Red-Dead-Redemption.jpg" class="lightbox-trigger">
-      <img src="catalogo/Red-Dead-Redemption.jpg" alt="Red Dead Redemption">
-    </a>
-  </span>
-  <h4>Red Dead Redemption</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-2500K / AMD FX-6300, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-4770K / AMD Ryzen 5 1500X, 12 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Red%20Dead%20Redemption" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/resident-evil-2-2019-deluxe-edition-9167-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/resident-evil-2-2019-deluxe-edition-9167-poster.jpg" alt="Resident Evil 2 Remake">
-    </a>
-  </span>
-  <h4>Resident Evil 2 Remake</h4>
-  <p><strong>Descripción:</strong> Terror / Supervivencia<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-4460 / AMD FX-6300, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-3770 / AMD FX-9590, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%202%20Remake" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Resident-Evil-3-2020-Deluxe-Edition.jpg" class="lightbox-trigger">
-      <img src="catalogo/Resident-Evil-3-2020-Deluxe-Edition.jpg" alt="Resident Evil 3 Remake">
-    </a>
-  </span>
-  <h4>Resident Evil 3 Remake</h4>
-  <p><strong>Descripción:</strong> Terror / Supervivencia<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 64-bit, Intel Core i5-4460 / AMD FX-6300, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 64-bit, Intel Core i7-3770 / AMD FX-9590, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%203%20Remake" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/resident-evil-4-ultimate-hd-edition-elamigos-7122-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/resident-evil-4-ultimate-hd-edition-elamigos-7122-poster.jpg" alt="Resident Evil 4 Ultimate HD Edition">
-    </a>
-  </span>
-  <h4>Resident Evil 4 Ultimate HD Edition</h4>
-  <p><strong>Descripción:</strong> Acción / Terror<br>
-  <strong>Requisitos mínimos:</strong> Windows 7 64-bit, Intel Core 2 Duo 2.4GHz / AMD Athlon X2 2.8GHz, 2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8/10 64-bit, Intel Core 2 Quad 2.7GHz / AMD Phenom II X4 3.0GHz, 4 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Resident%20Evil%204%20Ultimate%20HD%20Edition" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/need-for-speed-the-run-limited-edition-2109-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/need-for-speed-the-run-limited-edition-2109-poster.jpg" alt="Need for Speed: The Run">
-    </a>
-  </span>
-  <h4>Need for Speed: The Run</h4>
-  <p><strong>Descripción:</strong> Carreras / Acción<br>
-  <strong>Requisitos mínimos:</strong> Windows 7 64-bit, Intel Core 2 Duo 3.0GHz / AMD Athlon X2 3.0GHz, 3 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8/10 64-bit, Intel Core i5 750 / AMD Phenom II X4 965, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20The%20Run" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/MV5BZjFjZDQyZjUtY2NhOC00NTQ2LWIwMmMtNGJkZjg3ODU5OGU1XkEyXkFqcGc@._V1_.jpg" class="lightbox-trigger">
-      <img src="catalogo/MV5BZjFjZDQyZjUtY2NhOC00NTQ2LWIwMmMtNGJkZjg3ODU5OGU1XkEyXkFqcGc@._V1_.jpg" alt="Halo 2: Anniversary">
-    </a>
-  </span>
-  <h4>Halo 2: Anniversary</h4>
-  <p><strong>Descripción:</strong> Shooter / Ciencia Ficción (HALO 1,2,3,REACH,ODST,HALO4,) PACK COMPLETO <br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-4160 / AMD FX-6350, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-4770K / AMD FX-8370, 16 GB RAM<br>
-  <strong>Precio: 15.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Halo%202%20Anniversary" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/metro-redux-bundle-9204-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/metro-redux-bundle-9204-poster.jpg" alt="Metro Redux">
-    </a>
-  </span>
-  <h4>Metro Redux</h4>
-  <p><strong>Descripción:</strong> Shooter / Supervivencia / Terror<br>
-  <strong>Requisitos mínimos:</strong> Windows Vista/7/8 (64-bit), Intel Core 2 Duo / AMD equivalente 2.2 GHz, 2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows Vista/7/8 (64-bit), Intel Core i5 / AMD A8 3.0 GHz, 4 GB RAM<br>
-  <strong>Precio: 9.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Metro%20Redux" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Marvels-Spider-Man-2-Deluxe-Edition.jpg" class="lightbox-trigger">
-      <img src="catalogo/Marvels-Spider-Man-2-Deluxe-Edition.jpg" alt="Marvel's Spider-Man 2">
-    </a>
-  </span>
-  <h4>Marvel's Spider-Man 2</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Superhéroes<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-8600K / AMD Ryzen 5 2600X, 16 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i5-11600K / AMD Ryzen 5 3600X, 16 GB RAM<br>
-  <strong>Precio: 8.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Marvel%20Spider%20Man%202" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/need-for-speed-most-wanted-2012-3654-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/need-for-speed-most-wanted-2012-3654-poster.jpg" alt="Need for Speed: Most Wanted">
-    </a>
-  </span>
-  <h4>Need for Speed: Most Wanted (2012)</h4>
-  <p><strong>Descripción:</strong> Carreras / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows Vista/7/8, Intel Core 2 Duo 2.4 GHz / AMD Athlon X2 2.7 GHz, 2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8 (64-bit), Intel Core 2 Quad / AMD Phenom II X4, 4 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20Most%20Wanted%202012" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/need-for-speed-shift-2117-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/need-for-speed-shift-2117-poster.jpg" alt="Need for Speed: Shift">
-    </a>
-  </span>
-  <h4>Need for Speed: Shift</h4>
-  <p><strong>Descripción:</strong> Carreras / Simulación<br>
-  <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo 1.6 GHz, 1-2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows Vista/7, Intel Core 2 Duo 2.5 GHz, 2-3 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Need%20for%20Speed%20Shift" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/LWQQQaPNl7m4w4IIviyKgmLA4u7jOCkW.png" class="lightbox-trigger">
-      <img src="catalogo/LWQQQaPNl7m4w4IIviyKgmLA4u7jOCkW.png" alt="Assassin's Creed Origins">
-    </a>
-  </span>
-  <h4>Assassin's Creed Origins</h4>
-  <p><strong>Descripción:</strong> Acción / RPG / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-2400s / AMD FX-6350, 6 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 8.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Origins" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/assassins-creed-unity-gold-edition-6626-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/assassins-creed-unity-gold-edition-6626-poster.jpg" alt="Assassin's Creed Unity">
-    </a>
-  </span>
-  <h4>Assassin's Creed Unity</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i5-2500K / AMD FX-8350, 6 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Unity" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/assassins-creed-rogue-6612-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/assassins-creed-rogue-6612-poster.jpg" alt="Assassin's Creed Rogue">
-    </a>
-  </span>
-  <h4>Assassin's Creed Rogue</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 7 SP1/8/8.1 (64-bit), Intel Core 2 Quad Q6600 / AMD Athlon II X4 620, 2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7 SP1/8/8.1 (64-bit), Intel Core i5 2400s / AMD FX-6350, 4 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Rogue" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Assassins-Creed-Valhalla.jpg" class="lightbox-trigger">
-      <img src="catalogo/Assassins-Creed-Valhalla.jpg" alt="Assassin's Creed Valhalla">
-    </a>
-  </span>
-  <h4>Assassin's Creed Valhalla</h4>
-  <p><strong>Descripción:</strong> RPG / Acción / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core i5-4460 / AMD Ryzen 3 1200, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core i7-4790 / AMD Ryzen 5 1600, 8 GB RAM<br>
-  <strong>Precio: 8.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Valhalla" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/assassins-creed-syndicate-gold-edition-6642-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/assassins-creed-syndicate-gold-edition-6642-poster.jpg" alt="Assassin's Creed Syndicate">
-    </a>
-  </span>
-  <h4>Assassin's Creed Syndicate</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i5-2400S / AMD FX-6350, 6 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7 SP1/8.1/10 (64-bit), Intel Core i7-3770 / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 8.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Syndicate" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/assassins-creed-revelations-gold-edition-6597-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/assassins-creed-revelations-gold-edition-6597-poster.jpg" alt="Assassin's Creed: Revelations">
-    </a>
-  </span>
-  <h4>Assassin's Creed: Revelations</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Histórico<br>
-  <strong>Requisitos mínimos:</strong> Windows XP/Vista/7, Intel Core 2 Duo E4400 / AMD Athlon 64 X2 4000+, 1.5-2 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows Vista/7, Intel Core 2 Duo E6700 / AMD Athlon II X4 620, 4 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Assassin%20Creed%20Revelations" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/Mafia-Edicion-Definitiva.jpg" class="lightbox-trigger">
-      <img src="catalogo/Mafia-Edicion-Definitiva.jpg" alt="Mafia: Edición Definitiva">
-    </a>
-  </span>
-  <h4>Mafia: Edición Definitiva</h4>
-  <p><strong>Descripción:</strong> Acción / Mundo Abierto / Crimen<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), Intel Core-i5 2550K / AMD FX-8120, 6 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), Intel Core-i7 3770 / AMD FX-8350, 16 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Mafia%20Edicion%20Definitiva" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/fifa-19-8555-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/fifa-19-8555-poster.jpg" alt="FIFA 19">
-    </a>
-  </span>
-  <h4>FIFA 19</h4>
-  <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-6300 / AMD Athlon X4 870K, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2019" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/fifa-18-1611-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/fifa-18-1611-poster.jpg" alt="FIFA 18">
-    </a>
-  </span>
-  <h4>FIFA 18</h4>
-  <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-3550 / AMD FX 8150, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2018" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/fifa-17-super-deluxe-edition-972-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/fifa-17-super-deluxe-edition-972-poster.jpg" alt="FIFA 17">
-    </a>
-  </span>
-  <h4>FIFA 17</h4>
-  <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-2100 / AMD Phenom II X4 965, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i5-3550 / AMD FX 8150, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2017" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/fifa-15-ultimate-team-edition-505-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/fifa-15-ultimate-team-edition-505-poster.jpg" alt="FIFA 15">
-    </a>
-  </span>
-  <h4>FIFA 15</h4>
-  <p><strong>Descripción:</strong> Deportes / Simulación de Fútbol<br>
-  <strong>Requisitos mínimos:</strong> Windows Vista/7/8/8.1 (64-bit), Intel Q6600 Core 2 Quad / AMD Phenom 7950, 4 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows Vista/7/8/8.1 (64-bit), Intel i5-2550K / AMD FX-6300, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20FIFA%2015" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/gears_of_war_5-4889120.jpg" class="lightbox-trigger">
-      <img src="catalogo/gears_of_war_5-4889120.jpg" alt="Gears 5">
-    </a>
-  </span>
-  <h4>Gears 5</h4>
-  <p><strong>Descripción:</strong> Shooter / Acción / Ciencia Ficción<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (64-bit), AMD FX-6000 series / Intel i3 Skylake, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (64-bit), AMD Ryzen 5 / Intel i5 Kaby Lake, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Gears%205" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/gears-of-war-4-3230-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/gears-of-war-4-3230-poster.jpg" alt="Gears of War 4">
-    </a>
-  </span>
-  <h4>Gears of War 4</h4>
-  <p><strong>Descripción:</strong> Shooter / Acción / Ciencia Ficción<br>
-  <strong>Requisitos mínimos:</strong> Windows 10 (1607+) (64-bit), Intel Core i5-3470 / AMD FX-6300, 8 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 10 (1607+) (64-bit), Intel Core i5-4690 / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Gears%20of%20War%204" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/half_life_2-2504211.jpg" class="lightbox-trigger">
-      <img src="catalogo/half_life_2-2504211.jpg" alt="Half-Life 2">
-    </a>
-  </span>
-  <h4>Half-Life 2</h4>
-  <p><strong>Descripción:</strong> Shooter / Ciencia Ficción<br>
-  <strong>Requisitos mínimos:</strong> Windows 2000/XP/Vista/7, 1.7 GHz o superior, 512 MB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows XP/Vista/7, Intel Pentium 4 3.0 GHz o superior, 1 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Half%20Life%202" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-<li>
-  <span class="image fit">
-    <a href="catalogo/far-cry-primal-apex-edition-2932-poster.jpg" class="lightbox-trigger">
-      <img src="catalogo/far-cry-primal-apex-edition-2932-poster.jpg" alt="Far Cry Primal">
-    </a>
-  </span>
-  <h4>Far Cry Primal</h4>
-  <p><strong>Descripción:</strong> Acción / Aventura / Mundo Abierto<br>
-  <strong>Requisitos mínimos:</strong> Windows 7/8.1/10 (64-bit), Intel Core i3-550 / AMD Phenom II X4 955, 4 GB RAM<br>
-  <strong>Requisitos recomendados:</strong> Windows 7/8.1/10 (64-bit), Intel Core i7-2600K / AMD FX-8350, 8 GB RAM<br>
-  <strong>Precio: 7.000 Col</strong></p>
-  <div class="actions">
-    <a href="https://wa.me/573196728955?text=Hola,%20quiero%20pedir%20Far%20Cry%20Primal" target="_blank" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-    </a>
-  </div>
-</li>
-
-
-              <!-- 🔸 Puedes copiar y pegar este bloque de <li> para agregar más juegos manualmente -->
-
-            </ul>
+</ul>
 
             
             <div class="boton-descarga-container">
@@ -1123,7 +1234,7 @@
 
     </div>
 
-    <!-- siuuuuuuu -->
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -1131,13 +1242,11 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
-
     <script src="assets/js/simple-lightbox.min.js"></script>
+
     <script>
-      
       document.addEventListener('DOMContentLoaded', function () {
-        
+        // Lightbox
         if (typeof SimpleLightbox === 'function') {
           new SimpleLightbox('.lightbox-trigger', {
             captionsData: 'alt',
@@ -1145,7 +1254,68 @@
           });
         }
 
-        
+        // Buscador funcional
+        const buscador = document.getElementById('buscador-juegos');
+        const listaJuegos = document.getElementById('lista-juegos');
+        const resultadoBusqueda = document.getElementById('resultado-busqueda');
+        const juegos = Array.from(listaJuegos.getElementsByTagName('li'));
+
+        buscador.addEventListener('input', function() {
+          const termino = this.value.toLowerCase().trim();
+          let resultadosEncontrados = 0;
+          
+          // Ocultar todos los juegos primero
+          juegos.forEach(juego => {
+            juego.style.display = 'none';
+          });
+
+          if (termino === '') {
+            // Si no hay término de búsqueda, mostrar todos
+            juegos.forEach(juego => {
+              juego.style.display = 'block';
+            });
+            resultadoBusqueda.style.display = 'none';
+            return;
+          }
+
+          // Filtrar y mostrar juegos que coincidan
+          juegos.forEach(juego => {
+            const nombreJuego = juego.getAttribute('data-nombre').toLowerCase();
+            if (nombreJuego.includes(termino)) {
+              juego.style.display = 'block';
+              resultadosEncontrados++;
+            }
+          });
+
+          // Mostrar resultados de búsqueda
+          if (resultadosEncontrados > 0) {
+            resultadoBusqueda.innerHTML = `Se encontraron ${resultadosEncontrados} juego(s)`;
+            resultadoBusqueda.style.display = 'block';
+            resultadoBusqueda.className = 'resultado-busqueda';
+          } else {
+            resultadoBusqueda.innerHTML = 'No se encontraron juegos con ese nombre';
+            resultadoBusqueda.style.display = 'block';
+            resultadoBusqueda.className = 'resultado-busqueda sin-resultados';
+          }
+
+          // Scroll suave a los resultados
+          if (resultadosEncontrados > 0) {
+            const primerResultado = document.querySelector('li[style="display: block"]');
+            if (primerResultado) {
+              primerResultado.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+              });
+            }
+          }
+        });
+
+        // Limpiar búsqueda al hacer clic en el input
+        buscador.addEventListener('click', function() {
+          if (this.value !== '') {
+            this.select();
+          }
+        });
       });
     </script>
 
